@@ -1,0 +1,20 @@
+version: '3'
+services:
+    rasa:
+      container_name: "rasa_server_igs2"
+      user: root
+      build: 
+        context:  .
+      volumes:
+      - "./:/app"
+      ports: 
+        - "5007:5005"
+    action_server:
+      container_name: "action_server_igs2"
+      build: 
+        context: actions
+      volumes:
+        - ./actions:/app/actions
+        - ./data:/app/data
+      ports:
+        - 5057:5055
