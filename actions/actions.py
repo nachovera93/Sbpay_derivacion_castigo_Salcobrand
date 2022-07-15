@@ -314,7 +314,7 @@ class ActionDonde2(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         Querys(uniqueid)
-        dispatcher.utter_message(f'Estamos llamando desde autopase, por ser cliente de autopase podrá acceder a las Asistencias de IGS con excelentes beneficios, como Remolque de vehículo, exámenes médicos preventivos, reparaciones en el hogar y mucho más. Esto por tan solo 0 coma 2 Uefes, 6500 Pesos. No te pierdas esta gran oportunidad. solo con decir SÍ, serás transferido con uno de nuestros ejecutivos ¿Estas interesado?'')
+        dispatcher.utter_message(f'Estamos llamando desde autopase, por ser cliente de autopase podrá acceder a las Asistencias de IGS con excelentes beneficios, como Remolque de vehículo, exámenes médicos preventivos, reparaciones en el hogar y mucho más. Esto por tan solo 0 coma 2 Uefes, 6500 Pesos. No te pierdas esta gran oportunidad. solo con decir SÍ, serás transferido con uno de nuestros ejecutivos ¿Estas interesado?')
         return []
 
 
