@@ -3,7 +3,7 @@ version: "2.0"
 rules:
 
     
-  - rule: fallback2
+  - rule: fallback
     steps:
       - intent: nlu_fallback
       - action: utter_default_repetir
@@ -39,7 +39,7 @@ rules:
       - action: utter_bot
       - action: utter_negación_pago
       
-  - rule: fallback
+  - rule: fallback2
     steps:
       - intent: out_of_scope
       - action: utter_default
