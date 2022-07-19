@@ -201,6 +201,26 @@ class ActionNoPaga(Action):
         uniqueid = tracker.sender_id
         Querys(uniqueid)
         motivo = tracker.get_slot("razon")
+        dispatcher.utter_message(f"{motivo}")#{primernombre}
+        motivo = motivo.lower()
+        motivos = ["trabajo","cesante","autopista","quiero","enfermo","auto","vendí","puedo","pagué"]
+        for i in motivos:
+             if (i in motivo):
+                 motivo = i
+        if (motivo=="vendí"):
+            motivo = "vendí auto"
+        if (motivo=="puedo"):
+            motivo = "no puedo"
+        if (motivo=="pagué"):
+            motivo = "ya pago"
+        if (motivo=="autopista"):
+            motivo = "no uso autopista"
+        if (motivo=="trabajo"):
+            motivo = "sin trabajo"
+        if (motivo=="quiero"):
+            motivo = "no quiere"
+        if (motivo=="auto"):
+            motivo = "no tiene auto"
         Updates(4,motivo,4,derivacion,fecha_com,"Si",uniqueid,rut)
         dispatcher.utter_message(f"De igual manera estaremos compartiendo un correo con toda la información. Que tenga un excelente día. | EXIT")#{primernombre}
         return []
@@ -383,8 +403,7 @@ class ActionRecibirAutorizaoNo(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         razon = tracker.get_slot("razon")
-        print("razon: ", razon)
-            #dispatcher.utter_message(text=f"Razón: {Razón}")
+        
         return []
 
 
