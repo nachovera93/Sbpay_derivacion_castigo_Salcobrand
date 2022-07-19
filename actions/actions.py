@@ -201,7 +201,6 @@ class ActionNoPaga(Action):
         uniqueid = tracker.sender_id
         Querys(uniqueid)
         motivo = tracker.get_slot("razon")
-        dispatcher.utter_message(f"{motivo}")#{primernombre}
         motivo = motivo.lower()
         motivos = ["trabajo","cesante","autopista","quiero","enfermo","auto","vendí","puedo","pagué"]
         for i in motivos:
