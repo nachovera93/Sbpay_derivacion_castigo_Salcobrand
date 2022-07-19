@@ -200,6 +200,7 @@ class ActionNoPaga(Action):
         global uniqueid
         uniqueid = tracker.sender_id
         Querys(uniqueid)
+        dispatcher.utter_message(f"De igual manera estaremos compartiendo un correo con toda la información. Que tenga un excelente día. | EXIT")#{primernombre}
         motivo = tracker.get_slot("razon")
         motivo = motivo.lower()
         motivos = ["trabajo","cesante","autopista","quiero","enfermo","auto","vendí","puedo","pagué"]
@@ -221,7 +222,6 @@ class ActionNoPaga(Action):
         if (motivo=="auto"):
             motivo = "no tiene auto"
         Updates(4,motivo,4,derivacion,fecha_com,"Si",uniqueid,rut)
-        dispatcher.utter_message(f"De igual manera estaremos compartiendo un correo con toda la información. Que tenga un excelente día. | EXIT")#{primernombre}
         return []
 
 
