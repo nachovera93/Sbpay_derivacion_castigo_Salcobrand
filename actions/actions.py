@@ -51,13 +51,13 @@ def Querys(uniqueid):
         print(s)
         global nombre
         global monto
-        #global fechaVencimiento
+        global fechaVencimiento
         global primernombre
         global rut
         global campania
         nombre=data["data"][0]["address1"]
         monto=data["data"][0]["address2"]
-        #fechaVencimiento=data["data"][0]["city"]
+        fechaVencimiento=data["data"][0]["city"]
         primernombre=data["data"][0]["first_name"]
         rut=data["data"][0]["vendor_lead_code"]
         campania=data["data"][0]["campaign_name"]
@@ -164,7 +164,7 @@ class ActionQuestion(Action):
         #llamarDB(uniqueid)
         Querys(uniqueid)
         #ConverterDate()
-        dispatcher.utter_message(f'Estamos llamando de Autopista central por una boleta pendiente de {monto} vencida el ')
+        dispatcher.utter_message(f'Estamos llamando de Autopista central por una boleta pendiente de {monto} vencida el {fechaVencimiento}')
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
         
            
