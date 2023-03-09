@@ -47,8 +47,8 @@ def Querys(uniqueid):
         my_bytes_value = response.content
         my_new_string = my_bytes_value.decode("utf-8").replace("'", '"')
         data = json.loads(my_new_string)
-        #s = json.dumps(data, indent=4, sort_keys=True)
-        #print(s)
+        s = json.dumps(data, indent=4, sort_keys=True)
+        print(s)
         global nombre
         global monto
         #global fechaVencimiento
@@ -124,7 +124,7 @@ class ActionHello(Action):
         #progreso(7,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid)
         Updates(7,motivo,compromiso_p,derivacion,fecha_com,"No",uniqueid,rut)
         
-        dispatcher.utter_message(f'Estamos llamando de Autopase para entregar una excelente noticia, ¿Me comunico con {nombre}?')
+        dispatcher.utter_message(f'Hola, ¿Me comunico con {nombre}?')
         
            
            
@@ -164,7 +164,7 @@ class ActionQuestion(Action):
         #llamarDB(uniqueid)
         Querys(uniqueid)
         #ConverterDate()
-        dispatcher.utter_message(f'Por ser cliente de autopase, accede a las Asistencias de IGS con excelentes beneficios, como Remolque de vehículo, exámenes médicos preventivos, reparaciones en el hogar y mucho más. Esto por tan solo 0 coma 2 Uefes, 6500 Pesos. No te pierdas esta gran oportunidad. solo con decir SÍ, serás transferido con uno de nuestros ejecutivos ¿Estas interesado?')
+        dispatcher.utter_message(f'Estamos llamando de Autopista central por una boleta pendiente de {monto} vencida el ')
         Updates(2,motivo,compromiso_p,derivacion,fecha_com,"Si",uniqueid,rut)
         
            
