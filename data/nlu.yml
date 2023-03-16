@@ -1,6 +1,5 @@
 version: "2.0"
 nlu:
-
 - intent: afirmación
   examples: |
     - [el mismo](respuesta)
@@ -11,6 +10,9 @@ nlu:
     - [yes](respuesta)
     - [si](respuesta) porfavor
     - [porsupuesto](respuesta)
+    - [por supuesto](respuesta)
+    - [claramente](respuesta)
+    - [obviamente](respuesta)
     - [yup](respuestasi)
     - [yeah](respuesta)
     - [yes](respuesta) please
@@ -48,26 +50,30 @@ nlu:
     - [sí](respuesta)
     - [siiii](respuesta)
     - [siii](respuesta)
-    - [sii](respuesta)
     - la verdad es que [si](respuesta)
     - [con el](respuesta)
     - [con ella](respuesta)
     - [ok](respuesta)
     - [ti](respuesta)
     - [tiii](respuesta)
+    - [di](respuesta)
+    - [wi](respuesta)
     - [mande](respuesta)
     - [mandé](respuesta)
     - [digame](respuesta)
     - [diga](respuesta)
-    - [soy yo](respuesta)
-    - si [soy yo](respuesta)
     - [y](respuesta)
     - [i](respuesta)
-    - [yy](respuesta) 
-    - [cuenteme](respuesta)
+    - [yy](respuesta)
+    - [soy yo](respuesta)
+    - si [soy yo](respuesta)
+    - [te](respuesta)
+    - [t](respuesta)
+    - [si](respuesta)
 - intent: negación
   examples: |
     - [negativo](respuesta)
+    - [no](respuesta) puedo
     - [no](respuesta) creo
     - [no](respuesta)
     - pienso que [no](respuesta)
@@ -104,6 +110,7 @@ nlu:
     - te dije que [no](respuesta)
     - te dije que [nooo](respuesta)
     - la verdad es que [no](respuesta)
+    - [no](respuesta)
 - intent: saludos
   examples: |
     - hola
@@ -186,13 +193,29 @@ nlu:
     - no entendi
     - como dijo?
     - que necesita?
-
 - intent: out_of_scope
   examples: |
+    - tal vez
+    - quizás
+    - cuenteme
     - yo creo
     - ah ya
     - ya
-#- digame
+    - jshaaujdjdjd
+    - yayay
+    - que es lo que pasa
+    - concha
+    - fhajjajaj
+    - que es lo que sucede
+    - real
+    - jaoepepep
+    - jajajaja
+    - y que tanto
+    - y que tanta wea
+    - zik
+    - kizz
+    - lame
+    - degame
 - intent: eres_humano
   examples: |
     - eres un bot?
@@ -219,37 +242,12 @@ nlu:
     - quien eres?
     - quien me habla?
     - con quien estoy hablando?
-    - con quien hablo?
     - quien habla
     - con quien?
     - disculpa quien habla?
     - quien me dijo?
     - con quien
-
-    
-
-- intent: preguntar_monto
-  examples: |
-    - perdon cuanto?
-    - me repite el monto porfavor?
-    - disculpa, cuanta plata?
-    - cuanto es el monto?
-    - y cuanto erá?
-    - y cuanta plata erá?
-    - disculpa cual era el monto?
-    - cuanto
-    - monto
-- intent: que_fecha
-  examples: |
-    - cuando disculpa?
-    - me repite la fecha porfavor?
-    - cual era la fecha?
-    - que dia?
-    - que fecha erá?
-    - que día erá?
-    - disculpa cual era la fecha?
-    - fecha
-    - cuando
+    - quien llama
 - intent: de_donde
   examples: |
     - donde?
@@ -260,89 +258,31 @@ nlu:
     - de que parte?
     - de que parte llama?
     - de que parte es esto?
-
-- intent: que_hora_es
+    - Donde
+    - de donde
+- intent: Asesor
   examples: |
-    - que hora es
-    - dame la hora porfavor
-    - cual es el horario
-    - hora porfavor
-    - dime hora
-
-
-- intent: inicio
+    - [Asesor](motivo)
+    - Quiero un [Asesor](motivo)
+    - [Aseso](motivo)
+    - [Asesorarme](motivo) porfavor
+- intent: Renegociar
   examples: |
-    - inicio
-    - Inicio
-
-
-- intent: estoy_cesante_intent 
+    - [Renegociar](motivo)
+    - Quiero un [Renegociar](motivo)
+    - [Renegociacion](motivo)
+    - [Renegocio](motivo) porfavor
+    - [renegociar](motivo)
+    - [negociar](motivo)
+- intent: otra_fecha
   examples: |
-    - [no tengo trabajo](cesante)
-    - estoy [sin pega](cesante)
-    - estoy [sin trabajo](cesante)
-    - estoy [cesante](cesante)
-    - porque [no tengo trabajo](cesante)
-    - no podré, [no tengo pega](cesante)
-    - [no hay pega](cesante)
-    - disculpe [no tengo trabajo](cesante)
-
-- intent: no_tengo_plata_intent  
+    - Otra [fecha](motivo)
+    - Quiero otra [fecha](motivo)
+    - [fecha](motivo)
+    - otra [fecha](motivo) porfavor
+    - otro [día](motivo)
+- intent: cuando
   examples: |
-    - [no tengo plata](no_tengo_plata)
-    - estoy [sin dinero](no_tengo_plata)
-    - [no tengo dinero](no_tengo_plata)
-    - estoy [sin plata](no_tengo_plata)
-    - estoy [pato](no_tengo_plata)
-
-- intent: estoy_enfermo_intent  
-  examples: |
-    - estoy [enfermo](enfermo)
-    - tengo una [enfermedad](enfermo)
-    - estoy [convaleciente](enfermo)
-
-- intent: no_use_autopista_intent
-  examples: |
-    - [no he usado](no_ah_usado_autopista) esa autopista
-    - que raro yo [no la ocupe](no_ah_usado_autopista)
-    - [no use](no_ah_usado_autopista)
-
-- intent: no_tengo_auto_intent 
-  examples: |
-    - [no tengo auto](no_tengo_auto)
-    - [no tengo el auto](no_tengo_auto)
-    - que raro, yo [no tengo auto](no_tengo_auto)
-
-- intent: vendí_el_auto_intent
-  examples: |
-    - [vendí el auto](vendí_el_auto)
-    - que raro, porque (lo vendí)(vendí_el_auto)
-
-- intent: porque_no_puedo_intent 
-  examples: |
-    - [no puedo](no_puede) 
-    - en estos momentos [no puedo](no_puede) 
-    - porque [no puedo](no_puede)
-
-- intent: no_quiero_pagar_intent 
-  examples: |
-    - [no quiero](no_quiere_pagar) pagar
-    - porque [no quiero](no_quiere_pagar)
-    - [no tengo ganas](no_quiere_pagar) de pagar
-
-- intent: ya_pagué_intent  
-  examples: |
-    - [Ya pagué](ya_pago)
-    - [Ya pague](ya_pago)
-    - yo [ya cancele](ya_pago) eso
-    - no porque [ya pagué](ya_pago)
-    - porque [ya pagué](ya_pago)
-
-- intent: no_me_interesa  
-  examples: |
-    - [no me interesa](no_me_interesa)
-    - [no interesa](no_me_interesa)
-    - [no tengo interes](no_me_interesa) 
-    - [sin interes](ya_pago)
-
-
+    - cuando?
+    - cuando seria?
+    - que día?

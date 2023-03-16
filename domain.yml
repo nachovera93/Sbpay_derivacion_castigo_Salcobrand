@@ -3,18 +3,20 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- de_donde
 - negación
+- afirmación
+- saludos
+- eres_humano
+- de_donde
+- Renegociar
+- Asesor
 - que_fecha
 - preguntar_nombre
-- afirmación
 - no_tengo_plata_intent
-- saludos
 - porque_no_puedo_intent
 - estoy_cesante_intent
 - ya_pagué_intent
 - out_of_scope
-- eres_humano
 - no_tengo_auto_intent
 - estoy_enfermo_intent
 - despedida
@@ -28,89 +30,97 @@ intents:
 - inicio
 - que_hora_es
 - no_me_interesa
+- otra_fecha
+- cuando
 entities:
-- cesante
-- enfermo
-- no_ah_usado_autopista
-- no_puede
-- no_quiere_pagar
-- no_tengo_auto
-- no_tengo_plata
-- porque_no_puedo
+- motivo
+- nombre_persona
 - respuesta
-- vendí_el_auto
-- ya_pago
 slots:
-  es_o_no:
+  name:
+    type: text
+    influence_conversation: true
+  es_persona_correcta:
     type: text
     influence_conversation: true
   conoce_o_no:
     type: text
     influence_conversation: true
-  autoriza_o_no:
+  fecha_vcto:
     type: text
     influence_conversation: true
-  pagará_o_no:
+  fecha_pago:
     type: text
     influence_conversation: true
-  razon:
+  monto:
     type: text
     influence_conversation: true
-
+  paga_o_no:
+    type: text
+    influence_conversation: true
+  opcion_pago:
+    type: text
+    influence_conversation: false
 responses:
+  utter_greet:
+  - text: Hola!, me comunico con {name}?.
+  utter_greet_apolo:
+  - text: Disculpe, me comunico con {name}?.
+  utter_preguntar_conoce:
+  - text: ¿Usted conoce a {name}?
+  utter_si_conoce:
+  - text: Podría comentarle que tenemos información importante y que nos puede encontrar en web_cliente o llamando al fono_contacto| EXIT​
+  utter_no_conoce:
+  - text: Disculpe la molestia, que tenga buen día. | EXIT
+  utter_ask_question:
+  - text: '{name}, estamos llamando de Autopista Central por una boleta pendiente de {monto} vencida el {fecha_vcto}.​ ¿Puede realizar el pago dentro de los 3 próximos días?​'
+  utter_si_paga:
+  - text: Muchas gracias por su tiempo {name}. Su pago ha quedado agendado para el {fecha_pago}, que tenga un buen dia. | EXIT
   utter_default:
   - text: Disculpe ¿Sería tan amable de responder con un si o un no?
   utter_default_repetir:
   - text: Disculpe, no le entendí ¿Sería tan amable de responder con un si o un no?
   utter_disculpe_molestia:
   - text: Disculpe la molestia, que tenga un buen día, Adiós.
-  utter_negación_pago:
-  - text: ¿Podría indicarnos el motivo?
   utter_despedida:
   - text: Muchas gracias por su tiempo, adiós | EXIT
   utter_bot:
-  - text: Estamos llamando desde Autopase y Soy un asistente virtual.
+  - text: Estamos llamando desde Autopista Central y Soy un asistente virtual.
+  utter_donde:
+  - text: Estamos llamando desde Autopista Central.
+  utter_donde2:
+  - text: Estamos llamando desde Autopista Central ¿Puede realizar el pago dentro de los 3 próximos días?.
+  utter_no_paga:
+  - text: Para ayudarlo a solucionar esta situación, podría indicarnos alguna de estas alternativas?​ Desea renegociar la deuda? Desea pagar en otra fecha? Desea ayuda de un Asesor?
+  utter_tranfiere:
+  - text: ok, será transferido con uno de nuestros ejecutivos | TRANSFIERE
 actions:
-- action_ask_question
-- action_ask_question2
-- action_ask_question3
-- action_autoriza_o_no
-- action_conoce
-- action_contactar
-- action_despedida
 - action_no_paga
-- action_dar_hora
-- action_donde
-- action_donde2
-- action_enviar_slots
-- action_fecha
-- action_final
-- action_guardar_conoce_o_no
-- action_hello
-- action_hello2
-- action_monto
-- action_quien
-- action_recibir_es_o_no
-- action_recibir_paga_o_no
-- action_request
+- action_preguntar_persona
 - action_restart2
-- action_say_reason
-- action_si_conoce
+- action_save_data
 - action_si_paga
-- action_tracker_id
-- utter_bot
-- utter_default
-- utter_default_repetir
-- utter_despedida
-- action_is_logged_in
 - action_slot_reset
-- action_guardar_razón
-- action_pagar_3_días
-- action_donde3
+- opciones_pago_form
+- set_debts_action
+- set_name_action
+- utter_ask_question
+- utter_bot
+- utter_despedida
+- utter_disculpe_molestia
+- utter_donde
+- utter_greet
+- utter_greet_apolo
+- utter_no_conoce
+- utter_no_paga
+- utter_preguntar_conoce
+- utter_si_conoce
+- utter_si_paga
+- utter_tranfiere
 forms:
   persona_form:
     required_slots:
-      es_o_no:
+      es_persona_correcta:
       - entity: respuesta
         type: from_entity
   lo_conoce_form:
@@ -120,31 +130,11 @@ forms:
         type: from_entity
   paga_form:
     required_slots:
-      pagará_o_no:
+      paga_o_no:
       - entity: respuesta
         type: from_entity
-  razon_de_no_pago_form:
+  no_paga_form:
     required_slots:
-      razon:
-      - entity: respuesta
-        type: from_entity
-      - entity: cesante
-        type: from_entity
-      - entity: no_tengo_plata
-        type: from_entity
-      - entity: enfermo
-        type: from_entity
-      - entity: no_ah_usado_autopista
-        type: from_entity
-      - entity: no_puede
-        type: from_entity
-      - entity: no_quiere_pagar
-        type: from_entity
-      - entity: no_tengo_auto
-        type: from_entity
-      - entity: vendí_el_auto
-        type: from_entity
-      - entity: ya_pago
-        type: from_entity
-      - entity: no_me_interesa
+      opcion_pago:
+      - entity: motivo
         type: from_entity

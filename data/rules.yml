@@ -2,42 +2,47 @@
 version: "2.0"
 rules:
 
-    
-  - rule: fallback
+  - rule: Despedida
+    steps:
+      - intent: despedida
+      - action: utter_despedida
+      - action: action_restart2
+  
+  - rule: fallback2
     steps:
       - intent: nlu_fallback
       - action: utter_default_repetir
 
+
   - rule: eres bot1?
     steps:
-      - action: action_hello
+      - action: utter_greet
       - intent: eres_humano
       - action: utter_bot
-      - action: action_hello2
+      - action: utter_greet_apolo
 
 
   - rule: eres bot2?
     steps:
-      - action: action_ask_question
+      - action: utter_ask_question
       - intent: eres_humano
       - action: utter_bot
-      - action: action_ask_question2
-      - action: action_ask_question
+      - action: utter_ask_question
 
   - rule: eres bot3?
     steps:
-      - action: action_conoce
+      - action: utter_preguntar_conoce
       - intent: eres_humano
       - action: utter_bot
-      - action: action_conoce
+      - action: utter_preguntar_conoce
 
 
   - rule: eres bot8?
     steps:
-      - action: utter_negación_pago
+      - action: utter_no_paga
       - intent: eres_humano
       - action: utter_bot
-      - action: utter_negación_pago
+      - action: utter_no_paga
       
   - rule: fallback2
     steps:
@@ -45,152 +50,123 @@ rules:
       - action: utter_default
 
 
-  - rule: hora 1
-    steps:
-      - action: action_hello
-      - intent: que_hora_es
-      - action: action_dar_hora
-      - action: action_hello2 #Disculpe, Me comunico con {primernombre}?
-
-  - rule: hora 2
-    steps:
-      - action: action_ask_question
-      - intent: que_hora_es
-      - action: action_dar_hora
-      - action: action_ask_question2
-      - action: action_ask_question
-
-  - rule: hora 3
-    steps:
-      - action: action_conoce
-      - intent: que_hora_es
-      - action: action_dar_hora
-      - action: action_conoce
-
-
-  - rule: hora 4
-    steps:
-      - action: utter_negación_pago
-      - intent: que_hora_es
-      - action: action_dar_hora
-      - action: utter_negación_pago
-
   - rule: me repite 1
     steps:
-      - action: action_hello
+      - action: utter_greet
       - intent: me_repite
-      - action: action_hello
+      - action: utter_greet
 
   - rule: me repite 2
     steps:
-      - action: action_ask_question
+      - action: utter_greet_apolo
       - intent: me_repite
-      - action: action_ask_question
+      - action: utter_greet_apolo
 
   - rule: me repite 3
     steps:
-      - action: action_conoce
+      - action: utter_preguntar_conoce
       - intent: me_repite
-      - action: action_conoce
+      - action: utter_preguntar_conoce
 
   - rule: me repite 6
     steps:
-      - action: action_si_paga
+      - action: utter_si_conoce
       - intent: me_repite
-      - action: action_si_paga
+      - action: utter_si_conoce
 
   - rule: me repite 7
     steps:
-      - action: action_no_paga
+      - action: utter_no_conoce
       - intent: me_repite
-      - action: action_no_paga
+      - action: utter_no_conoce
 
 
   - rule: me repite 10
     steps:
-      - action: action_monto
+      - action: utter_ask_question
       - intent: me_repite
-      - action: action_monto
+      - action: utter_ask_question
 
   - rule: me repite 11
     steps:
-      - action: action_hello2
+      - action: utter_si_paga
       - intent: me_repite
-      - action: action_hello2
+      - action: utter_si_paga
 
   - rule: me repite 12
     steps:
-      - action: utter_negación_pago
+      - action: utter_default
       - intent: me_repite
-      - action: utter_negación_pago
+      - action: utter_default
 
   - rule: me repite 13
     steps:
-      - action: action_quien
+      - action: utter_default_repetir
       - intent: me_repite
-      - action: action_quien
+      - action: utter_default_repetir
 
   - rule: me repite 13
     steps:
-      - action: action_donde
+      - action: utter_disculpe_molestia
       - intent: me_repite
-      - action: action_donde
+      - action: utter_disculpe_molestia
 
 
   - rule: me repite 14
     steps:
-      - action: action_donde2
+      - action: utter_bot
       - intent: me_repite
-      - action: action_donde2
+      - action: utter_bot
 
   - rule: me repite 14
     steps:
-      - action: action_fecha
+      - action: utter_no_paga
       - intent: me_repite
-      - action: action_fecha
-
+      - action: utter_no_paga
+  
+  - rule: me repite 15
+    steps:
+      - action: utter_donde
+      - intent: me_repite
+      - action: utter_donde
 
 
   - rule: donde 1
     steps:
-      - action: action_conoce
+      - action: utter_preguntar_conoce
       - intent: de_donde
-      - action: action_donde
-      - action: action_conoce
+      - action: utter_donde
+      - action: utter_preguntar_conoce
 
   - rule: deonde 2
     steps:
-      - action: action_ask_question
+      - action: utter_ask_question
       - intent: de_donde
-      - action: action_donde2
+      - action: utter_donde2
 
   - rule: donde 3
     steps:
-      - action: action_hello
+      - action: utter_greet
       - intent: de_donde
-      - action: action_donde
-      - action: action_hello2
+      - action: utter_donde
+      - action: utter_greet_apolo
 
   - rule: donde 4
     steps:
-      - action: utter_negación_pago
+      - action: utter_no_paga
       - intent: de_donde
-      - action: action_donde
-      - action: utter_negación_pago
+      - action: utter_donde
+      - action: utter_no_paga
       
   - rule: donde 3
     steps:
       - intent: de_donde
-      - action: action_donde
+      - action: utter_donde
    
   - rule: despedida
     steps:
       - intent: despedida
       - action: utter_despedida
-      - action: action_recibir_es_o_no
-      - action: action_guardar_conoce_o_no
-      - action: action_recibir_paga_o_no
-      - action: action_guardar_razón
       - action: action_restart2  
 
  
