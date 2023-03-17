@@ -5,7 +5,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet, Restarted, AllSlotsReset
-#import pymongo
+import pymongo
 global SiPaga
 global NoPaga
 global motivo
@@ -24,9 +24,9 @@ fecha_com=None
 entrega_info=None
 
 
-#CONNECTION_STRING = "mongodb://172.16.1.41:27017,172.16.1.42:27017,172.16.1.43:27017/?replicaSet=haddacloud-rs&readPreference=secondaryPreferred"
-
-#myclient = pymongo.MongoClient(CONNECTION_STRING)
+CONNECTION_STRING = "mongodb://172.16.1.41:27017,172.16.1.42:27017,172.16.1.43:27017/?replicaSet=haddacloud-rs&readPreference=secondaryPreferred"
+# CONNECTION_STRING = "mongodb://Admin:T3c4dmin1.@172.16.1.228:27017/data_warehouse?authSource=admin&readPreference=secondaryPreferred"
+myclient = pymongo.MongoClient(CONNECTION_STRING)
 
 organization_id=11
 
@@ -36,21 +36,21 @@ class SetNameAction(Action):
 
     def run(self, dispatcher, tracker, domain):
 
-        #try:
-        #    splits = tracker.sender_id
-        #    customer_id,campaign_group,caller_id = splits.split('|')
-        #    names = getNameByCustomerID(customer_id)
-        #    print(names)
-        #except:
+        try:
+            splits = tracker.sender_id
+            customer_id,campaign_group,caller_id = splits.split('|')
+            names = getNameByCustomerID(customer_id)
+            print(names)
+        except:
             names = "Jose Miguel"
-        #try: 
-            #deuda_mora, fecha_vcto = getDebtsByCustomerID(customer_id, campaign_group)
-        #except:
+        try: 
+            deuda_mora, fecha_vcto = getDebtsByCustomerID(customer_id, campaign_group)
+        except:
             deuda_mora = "10000"
             fecha_vcto = "01-01-1979"
-        #print(f"deuda_mora : {deuda_mora}")
-        #print(f"fecha_vcto : {fecha_vcto}")
-            return [SlotSet("name", names),SlotSet("fecha_vcto", fecha_vcto), SlotSet("monto", deuda_mora)]
+        print(f"deuda_mora : {deuda_mora}")
+        print(f"fecha_vcto : {fecha_vcto}")
+        return [SlotSet("name", names),SlotSet("fecha_vcto", fecha_vcto), SlotSet("monto", deuda_mora)]
 
 
 def getNameByCustomerID(customer_id):

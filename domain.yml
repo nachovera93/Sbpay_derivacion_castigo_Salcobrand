@@ -81,7 +81,7 @@ responses:
   utter_default_repetir:
   - text: Disculpe, no le entendí ¿Sería tan amable de responder con un si o un no?
   utter_disculpe_molestia:
-  - text: Disculpe la molestia, que tenga un buen día, Adiós.
+  - text: Disculpe la molestia, que tenga un buen día, Adiós.| EXIT
   utter_despedida:
   - text: Muchas gracias por su tiempo, adiós | EXIT
   utter_bot:
@@ -93,7 +93,7 @@ responses:
   utter_no_paga:
   - text: Para ayudarlo a solucionar esta situación, podría indicarnos alguna de estas alternativas?​ Desea renegociar la deuda? Desea pagar en otra fecha? Desea ayuda de un Asesor?
   utter_tranfiere:
-  - text: ok, será transferido con uno de nuestros ejecutivos | TRANSFIERE
+  - text: ok, será transferido con uno de nuestros ejecutivos | DER
 actions:
 - action_no_paga
 - action_preguntar_persona
