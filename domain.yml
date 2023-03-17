@@ -73,7 +73,7 @@ responses:
   utter_no_conoce:
   - text: Disculpe la molestia, que tenga buen día. | EXIT
   utter_ask_question:
-  - text: '{name}, estamos llamando de Autopista Central por una boleta pendiente de {monto} vencida el {fecha_vcto}.​ ¿Puede realizar el pago dentro de los 3 próximos días?​'
+  - text: '{name}, estamos llamando de Autopista Central por una boleta pendiente de {monto} pesos vencida el {fecha_vcto}.​ ¿Puede realizar el pago dentro de los 3 próximos días?​'
   utter_si_paga:
   - text: Muchas gracias por su tiempo {name}. Su pago ha quedado agendado para el {fecha_pago}, que tenga un buen dia. | EXIT
   utter_default:
