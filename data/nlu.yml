@@ -195,27 +195,27 @@ nlu:
     - que necesita?
 - intent: out_of_scope
   examples: |
-    - tal vez
-    - quizás
-    - cuenteme
-    - yo creo
-    - ah ya
-    - ya
-    - jshaaujdjdjd
-    - yayay
-    - que es lo que pasa
-    - concha
-    - fhajjajaj
-    - que es lo que sucede
-    - real
-    - jaoepepep
-    - jajajaja
-    - y que tanto
-    - y que tanta wea
-    - zik
-    - kizz
-    - lame
-    - degame
+    - No entiendo lo que estás diciendo
+    - Eso está fuera de mi alcance
+    - No estoy seguro de lo que significa eso
+    - Lo siento, no comprendo
+    - No tengo información sobre eso
+    - Eso no tiene sentido para mí
+    - No sé cómo responder a eso
+    - Perdón, no te entiendo
+    - No estoy programado para responder eso
+    - Me temo que eso no está dentro de mis funciones
+    - No tengo la respuesta a esa pregunta
+    - Disculpa, eso no es algo que pueda hacer
+    - Lo siento, no puedo ayudarte con eso
+    - No estoy seguro de cómo responder a eso
+    - Me confunde lo que dices
+    - No tengo la capacidad de hacer eso
+    - Eso no es algo que pueda hacer
+    - No entiendo el contexto de tu pregunta
+    - No estoy programado para manejar eso
+    - Me parece que estás fuera de tema
+
 - intent: eres_humano
   examples: |
     - eres un bot?
@@ -260,29 +260,207 @@ nlu:
     - de que parte es esto?
     - Donde
     - de donde
+    - ¿Desde qué lugar me están llamando?
+    - ¿De dónde me hablan?
+    - ¿Podría decirme desde qué ciudad está llamando?
+    - ¿De qué lugar es la llamada?
+    - ¿Desde qué parte del país me habla?
+    - ¿Cuál es la ubicación de la llamada?
+    - ¿Desde qué región me están llamando?
+    - ¿Podría indicarme el lugar de donde me llama?
+    - ¿De qué lugar específico me habla?
+
 - intent: Asesor
   examples: |
     - [Asesor](motivo)
     - Quiero un [Asesor](motivo)
     - [Aseso](motivo)
     - [Asesorarme](motivo) porfavor
+    - [Consultor](motivo) en el tema
+    - [Asistente](motivo) especializado
+    - Necesito un [asesoramiento](motivo)
+    - Quiero hablar con un [experto](motivo)
+    - [Consejero](motivo) en el tema
+    - Busco [guiarme](motivo) en el proceso
+    - Me gustaría tener [orientación](motivo)
+    - Quiero un [asesor](motivo) que me explique
+    - Quiero [asesoramiento](motivo) especializado
+    - [Guía](motivo) en el proceso
+    - [Mentor](motivo) que me ayude
+    - [Tutor](motivo) en el tema
+    - [Asesoría](motivo) en el tema
+    - Necesito [asesoría](motivo)
+    - Quiero [asesoramiento](motivo) profesional
+    - Busco [asesoría](motivo) legal
+    - Quiero hablar con un [asesor](motivo)
+    - Busco [asesoría](motivo) en finanzas
+    - Necesito [asesoramiento](motivo) técnico
+    - [Consultoría](motivo) en el tema
+    - [Coach](motivo) que me guíe
+    - Quiero [asesoría](motivo) empresarial
+    - [Gestor](motivo) que me asista
+    - [Consultor](motivo) que me aconseje
+    - Quiero [asesoramiento](motivo) sobre inversiones
+    - [Tutoría](motivo) en el tema
+    - [Guía](motivo) que me oriente
+    - Necesito [asesoramiento](motivo) médico
+    - [Asesoría](motivo) en marketing
+    - Quiero [asesoramiento](motivo) fiscal
+    - Busco [asesoramiento](motivo) contable
+    - [Asesoría](motivo) jurídica
+    - [Experto](motivo) que me ayude
+    - [Consejero](motivo) que me aconseje
+    - [Consultor](motivo) que me asesore
+    - [Tutor](motivo) que me explique
+    - Quiero [asesoramiento](motivo) en recursos humanos
+    - [Consultor](motivo)
+    - [Orientador](motivo)
+    - [Guía](motivo) especializado
+    - [Especialista](motivo) en asesoría
+    - [Ayuda](motivo) de un experto
+    - [Asistente](motivo) personalizado
+    - [Coach](motivo) para mi proyecto
+    - [Mentor](motivo) en mi emprendimiento
+    - [Tutor](motivo) en mi negocio
+    - [Consejero](motivo) para mi estrategia
+    - [Facilitador](motivo) en mis decisiones
+    - [Acompañante](motivo) en mi proceso
+    - [Apoyo](motivo) para mi empresa
+    - [Asesoría](motivo) profesional
+    - [Asesoramiento](motivo) especializado
+    - [Asesoría](motivo) técnica
+    - [Asesoría](motivo) financiera
+    - [Asesoría](motivo) jurídica
+    - [Asesoría](motivo) contable
+
+
 - intent: Renegociar
   examples: |
-    - [Renegociar](motivo)
-    - Quiero un [Renegociar](motivo)
-    - [Renegociacion](motivo)
-    - [Renegocio](motivo) porfavor
-    - [renegociar](motivo)
-    - [negociar](motivo)
+    - Quiero [renegociar](motivo) mi contrato
+    - ¿Es posible [renegociar](motivo) las condiciones del préstamo?
+    - Me gustaría [renegociar](motivo) la tarifa del servicio
+    - ¿Cómo puedo [renegociar](motivo) el plazo de pago?
+    - ¿Qué documentos necesito para [renegociar](motivo) el contrato?
+    - Quiero saber si se puede [renegociar](motivo) el interés del préstamo
+    - ¿Podríamos [renegociar](motivo) el monto del alquiler?
+    - ¿Se puede [renegociar](motivo) el precio del producto?
+    - ¿Cuál es el proceso para [renegociar](motivo) el contrato?
+    - Me interesa [renegociar](motivo) las condiciones del seguro
+    - ¿Es posible [renegociar](motivo) el plazo del crédito?
+    - Quiero [renegociar](motivo) el porcentaje de comisión
+    - ¿Hay alguna restricción para [renegociar](motivo) el contrato?
+    - ¿Podría [renegociar](motivo) el horario de trabajo?
+    - ¿Puedo [renegociar](motivo) la tasa de interés del préstamo?
+    - Me gustaría [renegociar](motivo) la fecha de entrega del producto
+    - ¿Qué condiciones se pueden [renegociar](motivo) en el contrato?
+    - Quiero saber si se puede [renegociar](motivo) la forma de pago
+    - ¿Es posible [renegociar](motivo) la duración del contrato?
+    - ¿Cuál es el plazo para [renegociar](motivo) el acuerdo?
+    - [Negociar de nuevo](motivo)
+    - [Reestructurar](motivo) mi acuerdo
+    - [Modificar](motivo) mi contrato
+    - [Volver a negociar](motivo) las condiciones
+    - [Revisar](motivo) el acuerdo actual
+    - [Renovar](motivo) mi trato
+    - [Cambiarme](motivo) a un nuevo plan
+    - [Actualizar](motivo) mi contrato
+    - [Renegociar](motivo) los términos
+    - [Ajustar](motivo) las condiciones actuales
+    - [Refinanciar](motivo) mi deuda
+    - [Replantear](motivo) mi acuerdo actual
+    - [Reformular](motivo) mi contrato
+    - [Renegociar](motivo) mi hipoteca
+    - [Reconsiderar](motivo) los términos actuales
+    - [Revisar](motivo) mi plan actual
+    - [Negociar de nuevo](motivo) el precio
+    - [Renegociar](motivo) el plazo
+    - [Modificar](motivo) mi acuerdo actual
+    - [Actualizar](motivo) mi plan actual
 - intent: otra_fecha
   examples: |
-    - Otra [fecha](motivo)
-    - Quiero otra [fecha](motivo)
-    - [fecha](motivo)
-    - otra [fecha](motivo) porfavor
-    - otro [día](motivo)
+    - Quiero cambiar de [fecha](motivo)
+    - Podemos hacerlo en otro [día](motivo)
+    - Me gustaría modificar la [fecha](motivo)
+    - Cambiar la [fecha](motivo) es mi intención
+    - ¿Podemos programar para otro [día](motivo)?
+    - Cambiemos la [fecha](motivo)
+    - Me interesa hacerlo en una [fecha](motivo) distinta
+    - Puedes ofrecerme otra [fecha](motivo)
+    - Quiero agendar una [fecha](motivo) diferente
+    - ¿Podemos hacerlo en otra [fecha](motivo)?
+    - Me gustaría programar para un [día](motivo) distinto
+    - Podríamos cambiar la [fecha](motivo) de la reunión
+    - ¿Hay posibilidad de hacerlo en otra [fecha](motivo)?
+    - Me gustaría posponer la [fecha](motivo)
+    - Quiero cambiar la [fecha](motivo) del encuentro
+    - Me interesa programar para un [día](motivo) más adecuado
+    - Podríamos reagendar la [fecha](motivo)
+    - ¿Podemos agendar para otra [fecha](motivo)?
+    - Me gustaría reprogramar para un [día](motivo) más conveniente
+    - Cambiar la [fecha](motivo) sería lo ideal
+    - ¿Podemos posponer para otra [fecha](motivo)?
+    - Me gustaría hacerlo en otra [fecha](motivo)
+    - Podríamos fijar una [fecha](motivo) diferente
+    - Me interesa programar para otro [día](motivo)
+    - ¿Podemos reagendar para otra [fecha](motivo)?
+    - Quiero modificar la [fecha](motivo) de la reunión
+    - Me gustaría concertar para un [día](motivo) más propicio
+    - Podemos mover la [fecha](motivo) para otro día
+    - Quiero hacerlo en una [fecha](motivo) que me acomode más
+    - Me gustaría cambiar la [fecha](motivo) de la cita
+    - Podemos posponer para una [fecha](motivo) más adecuada
+    - Me interesa hacerlo en una [fecha](motivo) más cercana
+    - ¿Podemos fijar una [fecha](motivo) que me acomode?
+
 - intent: cuando
   examples: |
     - cuando?
     - cuando seria?
     - que día?
+    - ¿Podrías decirme cuándo?
+    - ¿Me podrías indicar cuál es la fecha?
+    - Necesito saber cuándo es.
+    - ¿Cuándo sería eso?
+    - Quisiera conocer la fecha exacta.
+    - ¿Cuál es el día?
+    - ¿Podrías decirme qué fecha es?
+    - ¿Me podrías dar más detalles acerca del día?
+    - ¿Qué día es?
+    - Me gustaría saber cuándo sucede.
+    - ¿Cuál es la fecha en la que se llevará a cabo?
+    - ¿Podrías decirme el día exacto?
+    - ¿Cuándo tendría lugar?
+    - ¿En qué momento sería?
+    - ¿Cuándo está programado?
+    - ¿Qué día sería?
+    - ¿Cuál es la fecha en la que se realiza?
+    - ¿En qué fecha se llevará a cabo?
+    - ¿Cuándo se efectuará?
+
+- intent: preguntar_monto_deuda
+  examples: |
+    - Cuál es el monto de mi deuda?
+    - Podrías decirme el monto que debo?
+    - Quisiera saber cuánto debo pagar.
+    - Cuánto dinero tengo que pagar?
+    - Me puedes informar el monto que debo?
+    - Cuánto tengo que pagar de mi deuda?
+    - Quiero saber cuál es el monto total que tengo que pagar.
+    - Dime cuál es el monto que debo.
+    - Podrías decirme cuál es la cantidad que debo pagar?
+    - Cuánto dinero tengo que pagar en total?
+    - Necesito saber cuál es el monto que debo abonar.
+    - Quisiera saber cuál es el saldo que debo pagar.
+    - Cuál es la cantidad total que tengo que pagar por mi deuda?
+    - Podrías decirme cuánto dinero tengo que pagar por mi deuda?
+    - Cuál es el monto que debo liquidar?
+    - Me podrías informar cuánto debo pagar para saldar mi deuda?
+    - Quiero saber cuál es la cantidad que debo abonar para saldar mi deuda.
+    - Cuánto debo pagar para liquidar mi deuda?
+    - Podrías decirme cuál es el monto que tengo que pagar para saldar mi deuda?
+    - Quiero saber cuánto dinero tengo que pagar para saldar mi deuda.
+    - Me puedes informar cuál es la cantidad total que tengo que pagar para saldar mi deuda?
+    - Cuánto tengo que pagar para liquidar completamente mi deuda?
+    - Necesito saber cuál es el monto que debo abonar para saldar mi cuenta.
+    - Quiero saber cuál es el saldo que debo pagar para saldar completamente mi deuda.
+

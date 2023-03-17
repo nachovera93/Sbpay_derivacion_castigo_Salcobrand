@@ -158,6 +158,15 @@ rules:
       - action: utter_donde
       - action: utter_no_paga
       
+
+  - rule: donde 4
+    steps:
+      - action: utter_ask_question
+      - intent: preguntar_monto_deudae
+      - action: utter_monto
+      - action: utter_ask_question_2
+
+
   - rule: donde 3
     steps:
       - intent: de_donde

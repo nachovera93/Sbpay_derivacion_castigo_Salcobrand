@@ -61,7 +61,18 @@ slots:
   opcion_pago:
     type: text
     influence_conversation: false
-responses:
+rresponses:
+  utter_out_of_scope:
+  - text: "Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?"
+  - text: "No estoy seguro de haber entendido. ¿Podrías reformular tu respuesta?"
+  - text: "Parece que hay un problema con lo que dijiste. ¿Podrías decirlo de otra manera?"
+  - text: "Disculpa, no entendí lo que quisiste decir. ¿Podrías aclararlo un poco más?"
+  - text: "Me temo que no pude entender tu respuesta. ¿Podrías repetirla, por favor?"
+  - text: "No pude procesar tu respuesta. ¿Podrías intentarlo de nuevo de otra manera?"
+  - text: "Lo siento, pero no estoy seguro de lo que quisiste decir. ¿Podrías explicarlo mejor?"
+  - text: "No pude entender lo que dijiste. ¿Podrías hacerlo de otra manera o proporcionar más información?"
+  - text: "No estoy seguro de haber entendido tu respuesta. ¿Podrías intentarlo de nuevo, por favor?"
+  - text: "Lo siento, pero no pude entender tu respuesta. ¿Podrías decirlo de otra manera o proporcionar más detalles?"
   utter_greet:
   - text: Hola!, me comunico con {name}?.
   utter_greet_apolo:
@@ -74,6 +85,8 @@ responses:
   - text: Disculpe la molestia, que tenga buen día. | EXIT
   utter_ask_question:
   - text: '{name}, estamos llamando de Autopista Central por una boleta pendiente de {monto} pesos vencida el {fecha_vcto}.​ ¿Puede realizar el pago dentro de los 3 próximos días?​'
+  utter_ask_question_2:
+  - text: '{name}, ¿Puede realizar el pago dentro de los 3 próximos días?​'
   utter_si_paga:
   - text: Muchas gracias por su tiempo {name}. Su pago ha quedado agendado para el {fecha_pago}, que tenga un buen dia. | EXIT
   utter_default:
@@ -86,6 +99,8 @@ responses:
   - text: Muchas gracias por su tiempo, adiós | EXIT
   utter_bot:
   - text: Estamos llamando desde Autopista Central y Soy un asistente virtual.
+  utter_monto:
+  - text: 'El monto es de {monto} pesos vencida el {fecha_vcto}'
   utter_donde:
   - text: Estamos llamando desde Autopista Central.
   utter_donde2:
