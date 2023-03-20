@@ -32,6 +32,7 @@ intents:
 - no_me_interesa
 - otra_fecha
 - cuando
+- preguntar_monto_deuda
 entities:
 - motivo
 - nombre_persona
@@ -61,7 +62,7 @@ slots:
   opcion_pago:
     type: text
     influence_conversation: false
-rresponses:
+responses:
   utter_out_of_scope:
   - text: "Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?"
   - text: "No estoy seguro de haber entendido. ¿Podrías reformular tu respuesta?"
@@ -109,6 +110,8 @@ rresponses:
   - text: Para ayudarlo a solucionar esta situación, podría indicarnos alguna de estas alternativas?​ Desea renegociar la deuda? Desea pagar en otra fecha? Desea ayuda de un Asesor?
   utter_tranfiere:
   - text: ok, será transferido con uno de nuestros ejecutivos | DER
+  utter_cuando:
+  - text: 'la fecha es el {fecha_vcto}'
 actions:
 - action_no_paga
 - action_preguntar_persona
@@ -120,6 +123,7 @@ actions:
 - set_debts_action
 - set_name_action
 - utter_ask_question
+- utter_ask_question_2
 - utter_bot
 - utter_despedida
 - utter_disculpe_molestia
@@ -132,6 +136,11 @@ actions:
 - utter_si_conoce
 - utter_si_paga
 - utter_tranfiere
+- utter_monto
+- utter_default
+- utter_default_repetir
+- utter_donde2
+- utter_out_of_scope
 forms:
   persona_form:
     required_slots:

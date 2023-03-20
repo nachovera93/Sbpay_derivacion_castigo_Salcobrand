@@ -439,28 +439,27 @@ nlu:
 
 - intent: preguntar_monto_deuda
   examples: |
-    - Cuál es el monto de mi deuda?
-    - Podrías decirme el monto que debo?
-    - Quisiera saber cuánto debo pagar.
-    - Cuánto dinero tengo que pagar?
-    - Me puedes informar el monto que debo?
-    - Cuánto tengo que pagar de mi deuda?
-    - Quiero saber cuál es el monto total que tengo que pagar.
-    - Dime cuál es el monto que debo.
-    - Podrías decirme cuál es la cantidad que debo pagar?
-    - Cuánto dinero tengo que pagar en total?
-    - Necesito saber cuál es el monto que debo abonar.
-    - Quisiera saber cuál es el saldo que debo pagar.
-    - Cuál es la cantidad total que tengo que pagar por mi deuda?
-    - Podrías decirme cuánto dinero tengo que pagar por mi deuda?
-    - Cuál es el monto que debo liquidar?
-    - Me podrías informar cuánto debo pagar para saldar mi deuda?
-    - Quiero saber cuál es la cantidad que debo abonar para saldar mi deuda.
-    - Cuánto debo pagar para liquidar mi deuda?
-    - Podrías decirme cuál es el monto que tengo que pagar para saldar mi deuda?
-    - Quiero saber cuánto dinero tengo que pagar para saldar mi deuda.
-    - Me puedes informar cuál es la cantidad total que tengo que pagar para saldar mi deuda?
-    - Cuánto tengo que pagar para liquidar completamente mi deuda?
-    - Necesito saber cuál es el monto que debo abonar para saldar mi cuenta.
-    - Quiero saber cuál es el saldo que debo pagar para saldar completamente mi deuda.
+    - Cuanto
+    - Cuanto debo
+    - cuanto es?
+    - ¿Podrías decirme cuánto debo en total?
+    - Quiero saber cuánto dinero tengo que pagar por mi deuda.
+    - ¿Podrías decirme cuánto debo abonar para saldar mi cuenta por completo?
+    - ¿Cuál es el monto que tengo que liquidar?
+    - Quisiera saber cuánto es el monto total que tengo que abonar.
+    - ¿Cuánto dinero tengo que pagar para liquidar completamente mi deuda?
+    - ¿Me podrías informar cuál es la cantidad total que debo pagar?
+    - ¿Cuánto tengo que pagar para saldar mi deuda?
+    - Quiero saber cuánto dinero tengo que pagar en total.
+    - ¿Cuál es el monto que debo pagar para liquidar completamente mi saldo pendiente?
+    - Me gustaría saber cuánto debo en total.
+    - ¿Podrías decirme cuánto es el monto que tengo que abonar para saldar mi cuenta?
+    - Quiero saber cuál es la cantidad que tengo que pagar para liquidar mi deuda.
+    - ¿Cuánto tengo que pagar para saldar completamente mi saldo pendiente?
+    - Necesito saber cuánto es el monto que debo abonar para liquidar completamente mi deuda.
+    - ¿Podrías informarme cuál es el monto total que tengo que pagar?
+    - ¿Cuánto tengo que pagar para saldar mi deuda por completo?
+    - Quiero saber cuál es la cantidad que debo abonar para liquidar completamente mi saldo.
+    - ¿Podrías decirme cuál es el monto que tengo que pagar para liquidar mi deuda?
+    - ¿Cuánto tengo que pagar en total por mi deuda?
 

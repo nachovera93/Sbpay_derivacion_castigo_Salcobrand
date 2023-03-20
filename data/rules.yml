@@ -159,18 +159,20 @@ rules:
       - action: utter_no_paga
       
 
-  - rule: donde 4
+  - rule: cuanto
     steps:
       - action: utter_ask_question
-      - intent: preguntar_monto_deudae
+      - intent: preguntar_monto_deuda
       - action: utter_monto
       - action: utter_ask_question_2
 
-
-  - rule: donde 3
+  - rule: cuando 
     steps:
-      - intent: de_donde
-      - action: utter_donde
+      - action: utter_ask_question
+      - intent: cuando
+      - action: utter_cuando
+      - action: utter_ask_question_2
+
    
   - rule: despedida
     steps:
