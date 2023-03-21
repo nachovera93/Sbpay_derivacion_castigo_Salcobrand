@@ -65,15 +65,6 @@ slots:
 responses:
   utter_out_of_scope:
   - text: "Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?"
-  - text: "No estoy seguro de haber entendido. ¿Podrías reformular tu respuesta?"
-  - text: "Parece que hay un problema con lo que dijiste. ¿Podrías decirlo de otra manera?"
-  - text: "Disculpa, no entendí lo que quisiste decir. ¿Podrías aclararlo un poco más?"
-  - text: "Me temo que no pude entender tu respuesta. ¿Podrías repetirla, por favor?"
-  - text: "No pude procesar tu respuesta. ¿Podrías intentarlo de nuevo de otra manera?"
-  - text: "Lo siento, pero no estoy seguro de lo que quisiste decir. ¿Podrías explicarlo mejor?"
-  - text: "No pude entender lo que dijiste. ¿Podrías hacerlo de otra manera o proporcionar más información?"
-  - text: "No estoy seguro de haber entendido tu respuesta. ¿Podrías intentarlo de nuevo, por favor?"
-  - text: "Lo siento, pero no pude entender tu respuesta. ¿Podrías decirlo de otra manera o proporcionar más detalles?"
   utter_greet:
   - text: Hola!, me comunico con {name}?.
   utter_greet_apolo:
@@ -91,9 +82,9 @@ responses:
   utter_si_paga:
   - text: Muchas gracias por su tiempo {name}. Su pago ha quedado agendado para el {fecha_pago}, que tenga un buen dia. | EXIT
   utter_default:
-  - text: Disculpe ¿Sería tan amable de responder con un si o un no?
+  - text: "Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?"
   utter_default_repetir:
-  - text: Disculpe, no le entendí ¿Sería tan amable de responder con un si o un no?
+  - text: "Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?"
   utter_disculpe_molestia:
   - text: Disculpe la molestia, que tenga un buen día, Adiós.| EXIT
   utter_despedida:
