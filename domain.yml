@@ -3,20 +3,22 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- negación
-- afirmación
-- saludos
+- nlu_fallback
 - eres_humano
+- afirmación
+- preguntar_monto_deuda
+- saludos
 - de_donde
-- Renegociar
+- negación
 - Asesor
+- out_of_scope
+- Renegociar
 - que_fecha
 - preguntar_nombre
 - no_tengo_plata_intent
 - porque_no_puedo_intent
 - estoy_cesante_intent
 - ya_pagué_intent
-- out_of_scope
 - no_tengo_auto_intent
 - estoy_enfermo_intent
 - despedida
@@ -32,7 +34,6 @@ intents:
 - no_me_interesa
 - otra_fecha
 - cuando
-- preguntar_monto_deuda
 entities:
 - motivo
 - nombre_persona
@@ -64,7 +65,7 @@ slots:
     influence_conversation: false
 responses:
   utter_out_of_scope:
-  - text: "Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?"
+  - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
   utter_greet:
   - text: Hola!, me comunico con {name}?.
   utter_greet_apolo:
@@ -82,9 +83,9 @@ responses:
   utter_si_paga:
   - text: Muchas gracias por su tiempo {name}. Su pago ha quedado agendado para el {fecha_pago}, que tenga un buen dia. | EXIT
   utter_default:
-  - text: "Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?"
+  - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
   utter_default_repetir:
-  - text: "Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?"
+  - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
   utter_disculpe_molestia:
   - text: Disculpe la molestia, que tenga un buen día, Adiós.| EXIT
   utter_despedida:
@@ -92,7 +93,7 @@ responses:
   utter_bot:
   - text: Estamos llamando desde Autopista Central y Soy un asistente virtual.
   utter_monto:
-  - text: 'El monto es de {monto} pesos vencida el {fecha_vcto}'
+  - text: El monto es de {monto} pesos vencida el {fecha_vcto}
   utter_donde:
   - text: Estamos llamando desde Autopista Central.
   utter_donde2:
@@ -102,7 +103,7 @@ responses:
   utter_tranfiere:
   - text: ok, será transferido con uno de nuestros ejecutivos | DER
   utter_cuando:
-  - text: 'la fecha es el {fecha_vcto}'
+  - text: la fecha es el {fecha_vcto}
 actions:
 - action_no_paga
 - action_preguntar_persona
@@ -116,22 +117,22 @@ actions:
 - utter_ask_question
 - utter_ask_question_2
 - utter_bot
+- utter_default
+- utter_default_repetir
 - utter_despedida
 - utter_disculpe_molestia
 - utter_donde
+- utter_donde2
 - utter_greet
 - utter_greet_apolo
+- utter_monto
 - utter_no_conoce
 - utter_no_paga
+- utter_out_of_scope
 - utter_preguntar_conoce
 - utter_si_conoce
 - utter_si_paga
 - utter_tranfiere
-- utter_monto
-- utter_default
-- utter_default_repetir
-- utter_donde2
-- utter_out_of_scope
 forms:
   persona_form:
     required_slots:

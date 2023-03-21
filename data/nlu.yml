@@ -70,6 +70,7 @@ nlu:
     - [te](respuesta)
     - [t](respuesta)
     - [si](respuesta)
+    - [diga](respuesta)
 - intent: negación
   examples: |
     - [negativo](respuesta)
@@ -110,7 +111,6 @@ nlu:
     - te dije que [no](respuesta)
     - te dije que [nooo](respuesta)
     - la verdad es que [no](respuesta)
-    - [no](respuesta)
 - intent: saludos
   examples: |
     - hola
@@ -215,7 +215,7 @@ nlu:
     - No entiendo el contexto de tu pregunta
     - No estoy programado para manejar eso
     - Me parece que estás fuera de tema
-
+    - que sucede
 - intent: eres_humano
   examples: |
     - eres un bot?
@@ -248,6 +248,7 @@ nlu:
     - quien me dijo?
     - con quien
     - quien llama
+    - quien llama?
 - intent: de_donde
   examples: |
     - donde?
@@ -269,7 +270,7 @@ nlu:
     - ¿Desde qué región me están llamando?
     - ¿Podría indicarme el lugar de donde me llama?
     - ¿De qué lugar específico me habla?
-
+    - de donde llama
 - intent: Asesor
   examples: |
     - [Asesor](motivo)
@@ -330,10 +331,8 @@ nlu:
     - [Asesoramiento](motivo) especializado
     - [Asesoría](motivo) técnica
     - [Asesoría](motivo) financiera
-    - [Asesoría](motivo) jurídica
     - [Asesoría](motivo) contable
-
-
+    - que necesito [asesorarme](motivo)
 - intent: Renegociar
   examples: |
     - Quiero [renegociar](motivo) mi contrato
@@ -411,7 +410,6 @@ nlu:
     - Podemos posponer para una [fecha](motivo) más adecuada
     - Me interesa hacerlo en una [fecha](motivo) más cercana
     - ¿Podemos fijar una [fecha](motivo) que me acomode?
-
 - intent: cuando
   examples: |
     - cuando?
@@ -436,7 +434,6 @@ nlu:
     - ¿Cuál es la fecha en la que se realiza?
     - ¿En qué fecha se llevará a cabo?
     - ¿Cuándo se efectuará?
-
 - intent: preguntar_monto_deuda
   examples: |
     - Cuanto
@@ -462,4 +459,7 @@ nlu:
     - Quiero saber cuál es la cantidad que debo abonar para liquidar completamente mi saldo.
     - ¿Podrías decirme cuál es el monto que tengo que pagar para liquidar mi deuda?
     - ¿Cuánto tengo que pagar en total por mi deuda?
-
+    - cuanto
+- intent: nlu_fallback
+  examples: |
+    - de que habla
