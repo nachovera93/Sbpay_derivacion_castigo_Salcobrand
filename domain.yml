@@ -10,7 +10,7 @@ intents:
 - saludos
 - de_donde
 - negación
-- Asesor
+- Asesoria
 - out_of_scope
 - Renegociar
 - que_fecha
@@ -32,7 +32,7 @@ intents:
 - inicio
 - que_hora_es
 - no_me_interesa
-- otra_fecha
+- Reagendar
 - cuando
 entities:
 - motivo
@@ -99,7 +99,7 @@ responses:
   utter_donde2:
   - text: Estamos llamando desde Autopista Central ¿Puede realizar el pago dentro de los 3 próximos días?.
   utter_no_paga:
-  - text: Para ayudarlo a solucionar esta situación, podría indicarnos alguna de estas alternativas?​ Desea renegociar la deuda? Desea pagar en otra fecha? Desea ayuda de un Asesor?
+  - text: Para ayudarlo a solucionar esta situación, podría indicarnos alguna de estas alternativas?​ Desea renegociar la deuda? Desea pagar en otra fecha? Desea ayuda de un Asesoria?
   utter_tranfiere:
   - text: ok, será transferido con uno de nuestros ejecutivos | DER
   utter_cuando:
@@ -133,6 +133,9 @@ actions:
 - utter_si_conoce
 - utter_si_paga
 - utter_tranfiere
+- action_save_intent_paga_o_no
+- action_save_conoce_o_no
+- action_es_o_no
 forms:
   persona_form:
     required_slots:

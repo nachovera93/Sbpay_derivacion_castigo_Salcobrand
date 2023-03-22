@@ -271,7 +271,7 @@ nlu:
     - ¿Podría indicarme el lugar de donde me llama?
     - ¿De qué lugar específico me habla?
     - de donde llama
-- intent: Asesor
+- intent: Asesoria
   examples: |
     - [Asesor](motivo)
     - Quiero un [Asesor](motivo)
@@ -375,7 +375,7 @@ nlu:
     - [Renegociar](motivo) el plazo
     - [Modificar](motivo) mi acuerdo actual
     - [Actualizar](motivo) mi plan actual
-- intent: otra_fecha
+- intent: Reagendar
   examples: |
     - Quiero cambiar de [fecha](motivo)
     - Podemos hacerlo en otro [día](motivo)

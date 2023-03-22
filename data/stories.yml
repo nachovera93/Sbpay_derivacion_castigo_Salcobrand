@@ -19,6 +19,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_preguntar_conoce
     - intent: negación
       entities:
@@ -30,6 +31,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_conoce_o_no
     - action: utter_no_conoce
     - action: action_save_data
     - action: action_restart2
@@ -51,6 +53,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_preguntar_conoce
     - intent: afirmación
       entities:
@@ -62,6 +65,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_conoce_o_no
     - action: utter_si_conoce
     - action: action_save_data
     - action: action_restart2
@@ -89,6 +93,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: negación
       entities:
@@ -100,14 +105,15 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_intent_paga_o_no
     - action: utter_no_paga
-    - intent: Asesor
+    - intent: Asesoria
       entities:
-      - motivo: Asesor
+      - motivo: Asesoria
     - action: no_paga_form
     - active_loop: no_paga_form
     - slot_was_set:
-      - opcion_pago: Asesor
+      - opcion_pago: Asesoria
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
@@ -137,6 +143,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: negación
       entities:
@@ -148,14 +155,15 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_intent_paga_o_no
     - action: utter_no_paga
-    - intent: otra_fecha
+    - intent: Reagendar
       entities:
       - motivo: otra fecha
     - action: no_paga_form
     - active_loop: no_paga_form
     - slot_was_set:
-      - opcion_pago: otra_fecha
+      - opcion_pago: Reagendar
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
@@ -185,6 +193,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: negación
       entities:
@@ -196,6 +205,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_intent_paga_o_no
     - action: utter_no_paga
     - intent: Renegociar
       entities:
@@ -234,6 +244,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: afirmación
       entities:
@@ -245,6 +256,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_intent_paga_o_no
     - action: action_si_paga
     - action: utter_si_paga
     - action: action_save_data
@@ -265,16 +277,20 @@ stories:
     - action: utter_donde
     - action: utter_greet_apolo
     - intent: negación
+    - action: action_es_o_no
+    - action: utter_preguntar_conoce
+    - intent: negación
       entities:
       - respuesta: no
-    - action: persona_form
-    - active_loop: persona_form
+    - action: lo_conoce_form
+    - active_loop: lo_conoce_form
     - slot_was_set:
-      - es_persona_correcta: no
+      - conoce_o_no: no
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
-    - action: utter_disculpe_molestia
+    - action: action_save_conoce_o_no
+    - action: utter_no_conoce
     - action: action_save_data
     - action: action_restart2
   
@@ -303,6 +319,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: afirmación
       entities:
@@ -314,6 +331,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_intent_paga_o_no
     - action: action_si_paga
     - action: utter_si_paga
     - action: action_save_data
@@ -343,10 +361,12 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_preguntar_conoce
     - intent: afirmación
       entities:
       - respuesta: si
+    - action: action_save_conoce_o_no
     - action: utter_si_conoce
     - action: action_save_data
     - action: action_restart2
@@ -372,6 +392,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: negación
       entities:
@@ -384,6 +405,7 @@ stories:
       - requested_slot: null
     - active_loop: null
     - action: utter_no_paga
+    - action: action_save_intent_paga_o_no
     - intent: negación
       entities:
       - respuesta: no
@@ -412,6 +434,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: negación
       entities:
@@ -453,6 +476,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: negación
       entities:
@@ -464,12 +488,13 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_intent_paga_o_no
     - action: utter_no_paga
     - intent: out_of_scope
     - action: utter_default
-    - intent: Asesor
+    - intent: Asesoria
       entities:
-      - motivo: asesorarme
+      - motivo: Asesorizarme
     - action: utter_tranfiere
     - action: action_save_data
     - action: action_restart2
@@ -495,6 +520,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: negación
       entities:
@@ -506,6 +532,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_intent_paga_o_no
     - action: utter_no_paga
     - intent: out_of_scope
     - action: utter_default
@@ -537,6 +564,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: negación
       entities:
@@ -548,10 +576,11 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_save_intent_paga_o_no
     - action: utter_no_paga
     - intent: out_of_scope
     - action: utter_default
-    - intent: otra_fecha
+    - intent: Reagendar
       entities:
       - motivo: otra fecha
     - action: utter_tranfiere
@@ -585,10 +614,12 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_preguntar_conoce
     - intent: negación
       entities:
       - respuesta: no
+    - action: action_save_conoce_o_no
     - action: utter_no_conoce
     - action: action_save_data
     - action: action_restart2
@@ -632,6 +663,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
   
   - story: interactive_story_3
@@ -658,6 +690,7 @@ stories:
     - slot_was_set:
       - requested_slot: null
     - active_loop: null
+    - action: action_es_o_no
     - action: utter_ask_question
     - intent: nlu_fallback
     - action: utter_default_repetir
@@ -674,6 +707,7 @@ stories:
     - action: action_si_paga
     - slot_was_set:
       - fecha_pago: '2023-03-24'
+    - action: action_save_intent_paga_o_no
     - action: utter_si_paga
     - action: action_save_data
     - action: action_restart2

@@ -143,6 +143,46 @@ class ActionRecibirEsoNo(Action):
         return []
 
 
+conoce_intent=None
+class ActionConoceONo(Action):
+    def name(self):
+        return "action_save_conoce_o_no"
+
+    def run(self, dispatcher, tracker, domain):
+        global conoce_intent
+        # Obtener la intención actual
+        latest_message = tracker.latest_message
+        conoce_intent = latest_message['intent']['name']
+        print(f'conoce o no: {conoce_intent}')
+
+
+paga_intent=None
+class ActionPagaONo(Action):
+    def name(self):
+        return "action_save_intent_paga_o_no"
+
+    def run(self, dispatcher, tracker, domain):
+        global paga_intent
+        # Obtener la intención actual
+        latest_message = tracker.latest_message
+        paga_intent = latest_message['intent']['name']
+        print(f'paga_intent : {paga_intent}')
+
+es_o_no_intent=None
+
+
+class ActionConoceONo(Action):
+    def name(self):
+        return "action_es_o_no"
+
+    def run(self, dispatcher, tracker, domain):
+        global es_o_no_intent
+        # Obtener la intención actual
+        latest_message = tracker.latest_message
+        es_o_no_intent = latest_message['intent']['name']
+        print(f'es_o_no_intent: {es_o_no_intent}')
+
+
 class ActionSiPaga(Action):
     def name(self):
         return "action_save_data"
@@ -156,6 +196,14 @@ class ActionSiPaga(Action):
         customer_id,campaign_group,caller_id = splits.split('|')
         print("-------------------------------------------------------------")
         print(tracker.slots)
+
+        # Obtener la intención actual
+        latest_message = tracker.latest_message
+        current_intent = latest_message['intent']['name']
+        
+        # Imprimir el nombre de la intención
+        print(f'current_intent: {current_intent}')
+
         name=tracker.slots["name"]
         es_persona_correcta=tracker.slots["es_persona_correcta"]
         conoce_o_no=tracker.slots["conoce_o_no"]
@@ -167,12 +215,13 @@ class ActionSiPaga(Action):
         opcion_pago=tracker.slots["opcion_pago"]
 
         print(f'name: {name}')
-        print(f'es_persona_correcta {es_persona_correcta}')
-        print(f'conoce_o_no: {conoce_o_no}')
+        print(f'es_persona_correcta {es_o_no_intent}')
+        print(f'conoce_o_no: {conoce_intent}')
         print(f'fecha_vcto: {fecha_vcto}')
         print(f'monto: {monto}')
-        print(f'paga_o_no: {paga_o_no}')
-        print(f'opcion_pago: {opcion_pago}')
+        print(f'paga_o_no: {paga_intent}')
+        print(f'opcion_pago: {current_intent}')
+        print(f'conoce_intent: {conoce_intent}')
         
 
 
@@ -188,10 +237,10 @@ class ActionSiPaga(Action):
             },
             {
                 "$set": {
-                    "es_persona_correcta": es_persona_correcta,
-                    "conoce_o_no": conoce_o_no,
-                    "opcion_pago": opcion_pago,
-                    "paga_o_no": paga_o_no,
+                    "es_persona_correcta": es_o_no_intent,
+                    "conoce_o_no": conoce_intent,
+                    "opcion_pago": current_intent,
+                    "paga_o_no": paga_intent,
                     "name": name,
                     "monto": monto,
                     "fecha_vcto": fecha_vcto,
@@ -203,7 +252,17 @@ class ActionSiPaga(Action):
             )
         bulk_updates.append(update)
         result = mycol.bulk_write(bulk_updates)
-        print(f'{result.modified_count} Updateds')
+        #print(f'{result.modified_count} Updateds')
+        
+        name=None
+        es_persona_correcta=None
+        conoce_o_no=None
+        fecha_vcto=None
+        fecha_pago=None
+        monto=None
+        paga_o_no=None
+        fecha_vcto=None
+        opcion_pago=None
 
         return []
     
