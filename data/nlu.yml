@@ -463,3 +463,135 @@ nlu:
 - intent: nlu_fallback
   examples: |
     - de que habla
+    - no se que esta hablando
+
+- intent: opcion_1
+  examples: |
+    - Quiero elegir [la opción 1](motivo)
+    - Necesito seleccionar [la primera opción](motivo)
+    - Me gustaría optar por [la alternativa 1](motivo)
+    - ¿Puedo elegir [la opción uno](motivo)?
+    - Prefiero [la opción 1](motivo) a las demás
+    - Opto por [la opción inicial](motivo)
+    - Elijo [la opción en primer lugar](motivo)
+    - Necesito [la opción número uno](motivo)
+    - Me decido por [la opción principal](motivo)
+    - ¿Puedo elegir [la opción número 1](motivo)?
+    - Selecciono [la opción primaria](motivo)
+    - Me gustaría [la primera opción](motivo)
+    - ¿Cómo puedo seleccionar [la opción número uno](motivo)?
+    - Prefiero [la opción uno](motivo) a las demás
+    - Opto por [la primera opción](motivo)
+    - Elijo [la opción que está en la parte superior](motivo)
+    - Necesito [la opción 1] para continuar (motivo)
+    - Me gustaría escoger [la primera opción] (motivo)
+    - ¿Cuál es [la opción número uno](motivo) disponible?
+    - Quiero seleccionar [la opción número uno](motivo) (primera opción)
+    - Prefiero [la opción 1] (motivo) a las demás opciones
+    - Opto por [la opción 1] (motivo) como mi elección
+    - Elijo [la primera opción](motivo) como la mejor opción
+    - Necesito escoger [la opción número 1] (motivo) para avanzar
+    - Me gustaría seleccionar [la alternativa 1] (motivo) como mi opción
+    - ¿Es posible elegir [la opción uno](motivo) como mi elección?
+    - Quiero optar por [la opción 1] (motivo) para esta tarea
+    - Prefiero [la opción número uno](motivo) en esta situación
+    - Opto por [la primera opción](motivo) porque es la mejor opción
+    - Elijo [la opción que aparece en el primer lugar](motivo) como mi selección
+    - Necesito [la opción 1](motivo) para poder continuar con mi tarea
+    - Me gustaría escoger [la opción principal](motivo) como mi elección
+    - ¿Puedo seleccionar [la opción número 1](motivo) como mi opción?
+    - Quiero decidirme por [la primera opción](motivo) para esta tarea
+    - Prefiero [la opción inicial](motivo) como mi selección
+    - Opto por [la alternativa número 1](motivo) porque es la mejor
+    - Elijo [la opción número uno](motivo) como mi opción principal
+    - Necesito escoger [la primera opción](motivo) para continuar con mi tarea
+    - Me gustaría seleccionar [la opción en primer lugar](motivo) como mi elección
+    - [la uno](motivo)
+
+
+- intent: opcion_2
+  examples: |
+    - Quiero elegir [la opción 2](motivo)
+    - Necesito seleccionar [la segunda opción](motivo)
+    - Me gustaría optar por [la alternativa 2](motivo)
+    - ¿Puedo elegir [la opción dos](motivo)?
+    - Prefiero [la opción 2](motivo) a las demás
+    - Opto por [la opción secundaria](motivo)
+    - Elijo [la opción en segundo lugar](motivo)
+    - Necesito [la opción número dos](motivo)
+    - Me decido por [la opción secundaria](motivo)
+    - ¿Puedo elegir [la opción número 2](motivo)?
+    - Selecciono [la opción secundaria](motivo)
+    - Me gustaría [la segunda opción](motivo)
+    - ¿Cómo puedo seleccionar [la opción número dos](motivo)?
+    - Prefiero [la opción dos](motivo) a las demás
+    - Opto por [la segunda opción](motivo)
+    - Elijo [la opción que está en segundo lugar](motivo)
+    - Necesito [la opción 2] para continuar (motivo)
+    - Me gustaría escoger [la segunda opción] (motivo)
+    - ¿Cuál es [la opción número dos](motivo) disponible?
+    - Quiero seleccionar [la opción número dos](motivo) (segunda opción)
+    - Prefiero [la opción 2] (motivo) a las demás opciones
+    - Opto por [la opción 2] (motivo) como mi elección
+    - Elijo [la segunda opción](motivo) como la mejor opción
+    - Necesito escoger [la opción número dos] (motivo) para avanzar
+    - Me gustaría seleccionar [la alternativa 2] (motivo) como mi opción
+    - ¿Es posible elegir [la opción dos](motivo) como mi elección?
+    - Quiero optar por [la opción 2] (motivo) para esta tarea
+    - Prefiero [la opción número dos](motivo) en esta situación
+    - Opto por [la segunda opción](motivo) porque es la mejor opción
+    - Elijo [la opción que aparece en el segundo lugar](motivo) como mi selección
+    - Necesito [la opción 2](motivo) para poder continuar con mi tarea
+    - Me gustaría escoger [la opción secundaria](motivo) como mi elección
+    - ¿Puedo seleccionar [la opción número dos](motivo) como mi opción?
+    - Quiero decidirme por [la segunda opción](motivo) para esta tarea
+    - Prefiero [la opción secundaria](motivo) como mi selección
+    - Opto por [la alternativa número 2](motivo) porque es la mejor
+    - Elijo [la opción número dos](motivo) como mi opción secundaria
+    - Necesito escoger [la segunda opción](motivo) para continuar con mi tarea
+    - Me gustaría seleccionar [la opción en segundo lugar](motivo) como mi elección
+    - [la dos](motivo)
+
+
+- intent: opcion_3
+  examples: |
+    - Quiero elegir [la opción 3](motivo)
+    - Necesito seleccionar [la tercera opción](motivo)
+    - Me gustaría optar por [la alternativa 3](motivo)
+    - ¿Puedo elegir [la opción tres](motivo)?
+    - Prefiero [la opción 3](motivo) a las demás
+    - Opto por [la opción terciaria](motivo)
+    - Elijo [la opción en tercer lugar](motivo)
+    - Necesito [la opción número tres](motivo)
+    - Me decido por [la opción tercera](motivo)
+    - ¿Puedo elegir [la opción número 3](motivo)?
+    - Selecciono [la opción tercera](motivo)
+    - Me gustaría [la tercera opción](motivo)
+    - ¿Cómo puedo seleccionar [la opción número tres](motivo)?
+    - Prefiero [la opción tres](motivo) a las demás
+    - Opto por [la tercera opción](motivo)
+    - Elijo [la opción que está en tercer lugar](motivo)
+    - Necesito [la opción 3] para continuar (motivo)
+    - Me gustaría escoger [la tercera opción] (motivo)
+    - ¿Cuál es [la opción número tres](motivo) disponible?
+    - Quiero seleccionar [la opción número tres](motivo) (tercera opción)
+    - Prefiero [la opción 3] (motivo) a las demás opciones
+    - Opto por [la opción 3] (motivo) como mi elección
+    - Elijo [la tercera opción](motivo) como la mejor opción
+    - Necesito escoger [la opción número tres] (motivo) para avanzar
+    - Me gustaría seleccionar [la alternativa 3] (motivo) como mi opción
+    - ¿Es posible elegir [la opción tres](motivo) como mi elección?
+    - Quiero optar por [la opción 3] (motivo) para esta tarea
+    - Prefiero [la opción número tres](motivo) en esta situación
+    - Opto por [la tercera opción](motivo) porque es la mejor opción
+    - Elijo [la opción que aparece en el tercer lugar](motivo) como mi selección
+    - Necesito [la opción 3](motivo) para poder continuar con mi tarea
+    - Me gustaría escoger [la opción tercera](motivo) como mi elección
+    - ¿Puedo seleccionar [la opción número tres](motivo) como mi opción?
+    - Quiero decidirme por [la tercera opción](motivo) para esta tarea
+    - Prefiero [la opción terciaria](motivo) como mi selección
+    - Opto por [la alternativa número 3](motivo) porque es la mejor
+    - Elijo [la opción número tres](motivo) como mi opción tercera
+    - Necesito escoger [la tercera opción](motivo) para continuar con mi tarea
+    - Me gustaría seleccionar [la opción en tercer lugar](motivo) como mi elección
+    - [la tres](motivo)

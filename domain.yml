@@ -34,6 +34,9 @@ intents:
 - no_me_interesa
 - Reagendar
 - cuando
+- opcion_1
+- opcion_2
+- opcion_3
 entities:
 - motivo
 - nombre_persona
@@ -61,6 +64,9 @@ slots:
     type: text
     influence_conversation: true
   opcion_pago:
+    type: text
+    influence_conversation: false
+  predicted_intent:
     type: text
     influence_conversation: false
 responses:
@@ -99,7 +105,7 @@ responses:
   utter_donde2:
   - text: Estamos llamando desde Autopista Central ¿Puede realizar el pago dentro de los 3 próximos días?.
   utter_no_paga:
-  - text: Para ayudarlo a solucionar esta situación, podría indicarnos alguna de estas alternativas?​ Desea renegociar la deuda? Desea pagar en otra fecha? Desea ayuda de un Asesoria?
+  - text: Para poder ayudarlo a solucionar esta situación elija alguna de las siguientes opciones, Opción 1 ¿desea renegociar la deuda? Opción 2 ¿desea pagar en otra fecha? Opción 3 ¿desea ayuda de un asesor?
   utter_tranfiere:
   - text: ok, será transferido con uno de nuestros ejecutivos | DER
   utter_cuando:
@@ -136,6 +142,8 @@ actions:
 - action_save_intent_paga_o_no
 - action_save_conoce_o_no
 - action_es_o_no
+- action_repeat_last_question
+- action_default_fallback
 forms:
   persona_form:
     required_slots:

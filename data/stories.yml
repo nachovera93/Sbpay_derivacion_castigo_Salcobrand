@@ -222,6 +222,153 @@ stories:
     - action: action_restart2
 
    
+  
+  - story: interactive_story_5
+    steps:
+    - intent: saludos
+    - action: set_name_action
+    - slot_was_set:
+      - name: Jose Miguel
+    - slot_was_set:
+      - fecha_vcto: 01-01-1979
+    - slot_was_set:
+      - monto: '10000'
+    - action: utter_greet
+    - intent: afirmación
+      entities:
+      - respuesta: si
+    - action: persona_form
+    - active_loop: persona_form
+    - slot_was_set:
+      - es_persona_correcta: si
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_es_o_no
+    - action: utter_ask_question
+    - intent: negación
+      entities:
+      - respuesta: no
+    - action: paga_form
+    - active_loop: paga_form
+    - slot_was_set:
+      - paga_o_no: no
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_save_intent_paga_o_no
+    - action: utter_no_paga
+    - intent: opcion_1
+      entities:
+      - motivo: la opción uno
+    - action: no_paga_form
+    - active_loop: no_paga_form
+    - slot_was_set:
+      - opcion_pago: opción uno
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_tranfiere
+    - action: action_save_data
+    - action: action_restart2
+
+  - story: interactive_story_5
+    steps:
+    - intent: saludos
+    - action: set_name_action
+    - slot_was_set:
+      - name: Jose Miguel
+    - slot_was_set:
+      - fecha_vcto: 01-01-1979
+    - slot_was_set:
+      - monto: '10000'
+    - action: utter_greet
+    - intent: afirmación
+      entities:
+      - respuesta: si
+    - action: persona_form
+    - active_loop: persona_form
+    - slot_was_set:
+      - es_persona_correcta: si
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_es_o_no
+    - action: utter_ask_question
+    - intent: negación
+      entities:
+      - respuesta: no
+    - action: paga_form
+    - active_loop: paga_form
+    - slot_was_set:
+      - paga_o_no: no
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_save_intent_paga_o_no
+    - action: utter_no_paga
+    - intent: opcion_2
+      entities:
+      - motivo: la opcion dos
+    - action: no_paga_form
+    - active_loop: no_paga_form
+    - slot_was_set:
+      - opcion_pago: la dos
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_tranfiere
+    - action: action_save_data
+    - action: action_restart2
+
+  - story: interactive_story_opcion_3
+    steps:
+    - intent: saludos
+    - action: set_name_action
+    - slot_was_set:
+      - name: Jose Miguel
+    - slot_was_set:
+      - fecha_vcto: 01-01-1979
+    - slot_was_set:
+      - monto: '10000'
+    - action: utter_greet
+    - intent: afirmación
+      entities:
+      - respuesta: si
+    - action: persona_form
+    - active_loop: persona_form
+    - slot_was_set:
+      - es_persona_correcta: si
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_es_o_no
+    - action: utter_ask_question
+    - intent: negación
+      entities:
+      - respuesta: no
+    - action: paga_form
+    - active_loop: paga_form
+    - slot_was_set:
+      - paga_o_no: no
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_save_intent_paga_o_no
+    - action: utter_no_paga
+    - intent: opcion_3
+      entities:
+      - motivo: la opcion tres
+    - action: no_paga_form
+    - active_loop: no_paga_form
+    - slot_was_set:
+      - opcion_pago: la tres
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: utter_tranfiere
+    - action: action_save_data
+    - action: action_restart2
 
   - story: interactive_story_6
     steps:
@@ -499,6 +646,50 @@ stories:
     - action: action_save_data
     - action: action_restart2
   
+  - story: interactive_unlike_intent
+    steps:
+    - intent: saludos
+    - action: set_name_action
+    - slot_was_set:
+      - name: Jose Miguel
+    - slot_was_set:
+      - fecha_vcto: 01-01-1979
+    - slot_was_set:
+      - monto: '10000'
+    - action: utter_greet
+    - intent: afirmación
+      entities:
+      - respuesta: si
+    - action: persona_form
+    - active_loop: persona_form
+    - slot_was_set:
+      - es_persona_correcta: si
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_es_o_no
+    - action: utter_ask_question
+    - intent: negación
+      entities:
+      - respuesta: no
+    - action: paga_form
+    - active_loop: paga_form
+    - slot_was_set:
+      - paga_o_no: no
+    - slot_was_set:
+      - requested_slot: null
+    - active_loop: null
+    - action: action_save_intent_paga_o_no
+    - action: utter_no_paga
+    - intent: out_of_scope
+    - action: utter_default
+    - intent: opcion_1
+      entities:
+      - motivo: la uno
+    - action: utter_tranfiere
+    - action: action_save_data
+    - action: action_restart2
+
   - story: interactive_unlike_intent_2
     steps:
     - intent: saludos
@@ -536,9 +727,9 @@ stories:
     - action: utter_no_paga
     - intent: out_of_scope
     - action: utter_default
-    - intent: Renegociar
+    - intent: opcion_2
       entities:
-      - motivo: Renegociar
+      - motivo: la dos
     - action: utter_tranfiere
     - action: action_save_data
     - action: action_restart2
@@ -580,9 +771,9 @@ stories:
     - action: utter_no_paga
     - intent: out_of_scope
     - action: utter_default
-    - intent: Reagendar
+    - intent: opcion_3
       entities:
-      - motivo: otra fecha
+      - motivo: la tres
     - action: utter_tranfiere
     - action: action_save_data
     - action: action_restart2

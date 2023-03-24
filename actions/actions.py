@@ -53,6 +53,7 @@ class SetNameAction(Action):
         return [SlotSet("name", names),SlotSet("fecha_vcto", fecha_vcto), SlotSet("monto", deuda_mora)]
 
 
+
 def getNameByCustomerID(customer_id):
 
     mydb = myclient["haddacloud-v2"]
@@ -203,7 +204,13 @@ class ActionSiPaga(Action):
         
         # Imprimir el nombre de la intención
         print(f'current_intent: {current_intent}')
-
+        print(f'current_intent: {type(current_intent)}')
+        if(current_intent=="opcion_1"):
+            current_intent="Renegociar"
+        if(current_intent=="opcion_2"):
+            current_intent="Reagendar"
+        if(current_intent=="opcion_3"):
+            current_intent="Asesoria"
         name=tracker.slots["name"]
         es_persona_correcta=tracker.slots["es_persona_correcta"]
         conoce_o_no=tracker.slots["conoce_o_no"]
@@ -271,6 +278,40 @@ class ActionSiPaga(Action):
 
 
 
+class ActionRepeatLastQuestion(Action):
 
+    def name(self) -> Text:
+        return "action_repeat_last_question"
 
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        last_bot_utterance = None
 
+        for event in reversed(tracker.events):
+            if event.get("event") == "bot":
+                last_bot_utterance = event.get("text")
+                break
+
+        if last_bot_utterance:
+            dispatcher.utter_message(text=last_bot_utterance)
+        else:
+            dispatcher.utter_message(text="Lo siento, no tengo información sobre la última pregunta.")
+
+        return []
+
+class ActionFallback(Action):
+
+    def name(self) -> Text:
+        return "action_default_fallback"
+
+    async def run(
+        self,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: Dict[Text, Any],
+    ) -> List[Dict[Text, Any]]:
+
+        # Obtener la intención predicha
+        predicted_intent = tracker.latest_message['intent']['name']
+
+        # Establecer la ranura 'predicted_intent' con la intención predicha
+        return [SlotSet("predicted_intent", predicted_intent)]

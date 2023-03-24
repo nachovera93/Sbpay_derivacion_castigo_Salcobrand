@@ -8,10 +8,21 @@ rules:
       - action: utter_despedida
       - action: action_restart2
   
-  - rule: fallback2
+  #- rule: fallback2
+  #  steps:
+  #    - intent: nlu_fallback
+  #    - action: utter_default_repetir
+
+  - rule: Repetir la última pregunta cuando no se entiende la respuesta
+    condition:
+    - slot_was_set:
+      - predicted_intent: nlu_fallback
     steps:
-      - intent: nlu_fallback
-      - action: utter_default_repetir
+    - action: action_repeat_last_question
+
+
+
+
 
 
   - rule: eres bot1?
@@ -44,10 +55,10 @@ rules:
       - action: utter_bot
       - action: utter_no_paga
       
-  - rule: fallback2
-    steps:
-      - intent: out_of_scope
-      - action: utter_default
+ # - rule: fallback2
+ #   steps:
+ #     - intent: out_of_scope
+ #     - action: utter_default
 
 
   - rule: me repite 1
@@ -93,17 +104,17 @@ rules:
       - intent: me_repite
       - action: utter_si_paga
 
-  - rule: me repite 12
-    steps:
-      - action: utter_default
-      - intent: me_repite
-      - action: utter_default
-
-  - rule: me repite 13
-    steps:
-      - action: utter_default_repetir
-      - intent: me_repite
-      - action: utter_default_repetir
+  #- rule: me repite 12
+  #  steps:
+  #    - action: utter_default
+  #    - intent: me_repite
+  #    - action: utter_default
+#
+  #- rule: me repite 13
+  #  steps:
+  #    - action: utter_default_repetir
+  #    - intent: me_repite
+  #    - action: utter_default_repetir
 
   - rule: me repite 13
     steps:
