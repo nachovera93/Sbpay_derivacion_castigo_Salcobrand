@@ -73,44 +73,46 @@ nlu:
     - [diga](respuesta)
 - intent: negación
   examples: |
+    - [no](respuesta)
     - [negativo](respuesta)
+    - [nope](respuesta)
+    - [nop](respuesta)
+    - [nó](respuesta)
+    - [nada](respuesta)
+    - [nunca](respuesta)
+    - [jamás](respuesta)
+    - [equivocado](respuesta)
+    - [de ninguna manera](respuesta)
     - [no](respuesta) puedo
     - [no](respuesta) creo
-    - [no](respuesta)
-    - pienso que [no](respuesta)
-    - [nunca](respuesta)
-    - [de ninguna manera](respuesta)
-    - [nope](respuesta)
-    - [no](respuesta) gracias
-    - [nada](respuesta)
-    - [jamás](respuestano)
-    - [equivocado](respuesta)
-    - me [declino](respuesta)
-    - [no](respuesta) me gusta eso
-    - [no](respuesta) lo creo
-    - ehh [no](respuesta)
-    - [no](respuesta) quiero aceptar
-    - creo que me referia a que [no](respuesta)
     - [no](respuesta) estoy seguro
+    - [no](respuesta) lo creo
     - [no](respuesta) lo conozco
-    - [no](respuesta) soy
-    - [no](respuesta) señor
-    - [nop](respuesta)
-    - [no](respuesta) señorita
-    - [nop](respuesta), [no soy](respuesta)
-    - [no](respuesta) equivocado
-    - [no](respuesta) quiero
-    - ehhh [no](respuesta)
-    - [no] lo conozco(respuesta)
-    - ah [no](respuesta)
     - [no](respuesta) lo cacho
-    - [nó](respuesta)
+    - [no](respuesta) señor
+    - [no](respuesta) señorita
+    - [no](respuesta) soy
+    - [no](respuesta) quiero
+    - [no](respuesta) quiero aceptar
+    - [no](respuesta) me gusta eso
+    - [no](respuesta) gracias
+    - [noooooo](respuesta)
     - [noooo](respuesta)
     - [nooo](respuesta)
-    - [noooooo](respuesta)
+    - pienso que [no](respuesta)
+    - me [declino](respuesta)
+    - ehh [no](respuesta)
+    - ehhh [no](respuesta)
+    - ah [no](respuesta)
     - te dije que [no](respuesta)
     - te dije que [nooo](respuesta)
     - la verdad es que [no](respuesta)
+    - [no](respuesta) tengo dinero en estos momentos
+    - [no](respuesta) puedo pagar ahora
+    - estoy corto de dinero [no](respuesta) puedo pagar
+    - [no](respuesta) tengo plata ahora
+    - [no](respuesta) cuento con el dinero en este momento
+
 - intent: saludos
   examples: |
     - hola

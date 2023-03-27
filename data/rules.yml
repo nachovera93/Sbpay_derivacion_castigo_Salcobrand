@@ -19,6 +19,8 @@ rules:
       - predicted_intent: nlu_fallback
     steps:
     - action: action_repeat_last_question
+    - intent: ANY  # Agrega esta línea
+    - action: action_listen  # Agrega esta línea
 
 
 

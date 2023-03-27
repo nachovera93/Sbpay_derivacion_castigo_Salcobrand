@@ -637,8 +637,7 @@ stories:
     - active_loop: null
     - action: action_save_intent_paga_o_no
     - action: utter_no_paga
-    - intent: out_of_scope
-    - action: utter_default
+    - intent: nlu_fallback
     - intent: Asesoria
       entities:
       - motivo: Asesorizarme
@@ -681,8 +680,7 @@ stories:
     - active_loop: null
     - action: action_save_intent_paga_o_no
     - action: utter_no_paga
-    - intent: out_of_scope
-    - action: utter_default
+    - intent: nlu_fallback
     - intent: opcion_1
       entities:
       - motivo: la uno
@@ -725,8 +723,7 @@ stories:
     - active_loop: null
     - action: action_save_intent_paga_o_no
     - action: utter_no_paga
-    - intent: out_of_scope
-    - action: utter_default
+    - intent: nlu_fallback
     - intent: opcion_2
       entities:
       - motivo: la dos
@@ -769,8 +766,7 @@ stories:
     - active_loop: null
     - action: action_save_intent_paga_o_no
     - action: utter_no_paga
-    - intent: out_of_scope
-    - action: utter_default
+    - intent: nlu_fallback
     - intent: opcion_3
       entities:
       - motivo: la tres
@@ -828,7 +824,7 @@ stories:
       - monto: '10000'
     - action: utter_greet
     - intent: preguntar_monto_deuda
-    - action: utter_default
+    - intent: nlu_fallback
   
   - story: interactive_story_2
     steps:
@@ -884,7 +880,7 @@ stories:
     - action: action_es_o_no
     - action: utter_ask_question
     - intent: nlu_fallback
-    - action: utter_default_repetir
+    #- action: utter_default_repetir
     - intent: afirmación
       entities:
       - respuesta: si
