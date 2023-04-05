@@ -3,13 +3,14 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- ANY
+- negación
+- saludos
 - nlu_fallback
 - eres_humano
 - afirmación
 - preguntar_monto_deuda
-- saludos
 - de_donde
-- negación
 - Asesoria
 - out_of_scope
 - Renegociar
@@ -42,6 +43,9 @@ entities:
 - nombre_persona
 - respuesta
 slots:
+  phone_number:
+    type: text
+    influence_conversation: true
   name:
     type: text
     influence_conversation: true
@@ -79,7 +83,7 @@ responses:
   utter_preguntar_conoce:
   - text: ¿Usted conoce a {name}?
   utter_si_conoce:
-  - text: Podría comentarle que tenemos información importante y que nos puede encontrar en web_cliente o llamando al fono_contacto| EXIT​
+  - text: Podría comentarle que tenemos información importante y que nos puede encontrar en a b c servicios financieros .cl o llamando al 223805046| EXIT​
   utter_no_conoce:
   - text: Disculpe la molestia, que tenga buen día. | EXIT
   utter_ask_question:
@@ -111,10 +115,15 @@ responses:
   utter_cuando:
   - text: la fecha es el {fecha_vcto}
 actions:
+- action_default_fallback
+- action_es_o_no
 - action_no_paga
 - action_preguntar_persona
+- action_repeat_last_question
 - action_restart2
+- action_save_conoce_o_no
 - action_save_data
+- action_save_intent_paga_o_no
 - action_si_paga
 - action_slot_reset
 - opciones_pago_form
@@ -139,11 +148,6 @@ actions:
 - utter_si_conoce
 - utter_si_paga
 - utter_tranfiere
-- action_save_intent_paga_o_no
-- action_save_conoce_o_no
-- action_es_o_no
-- action_repeat_last_question
-- action_default_fallback
 forms:
   persona_form:
     required_slots:

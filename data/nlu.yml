@@ -69,8 +69,6 @@ nlu:
     - si [soy yo](respuesta)
     - [te](respuesta)
     - [t](respuesta)
-    - [si](respuesta)
-    - [diga](respuesta)
 - intent: negación
   examples: |
     - [no](respuesta)
@@ -112,7 +110,7 @@ nlu:
     - estoy corto de dinero [no](respuesta) puedo pagar
     - [no](respuesta) tengo plata ahora
     - [no](respuesta) cuento con el dinero en este momento
-
+    - [no](respuesta)
 - intent: saludos
   examples: |
     - hola
@@ -466,7 +464,6 @@ nlu:
   examples: |
     - de que habla
     - no se que esta hablando
-
 - intent: opcion_1
   examples: |
     - Quiero elegir [la opción 1](motivo)
@@ -509,8 +506,6 @@ nlu:
     - Necesito escoger [la primera opción](motivo) para continuar con mi tarea
     - Me gustaría seleccionar [la opción en primer lugar](motivo) como mi elección
     - [la uno](motivo)
-
-
 - intent: opcion_2
   examples: |
     - Quiero elegir [la opción 2](motivo)
@@ -553,8 +548,6 @@ nlu:
     - Necesito escoger [la segunda opción](motivo) para continuar con mi tarea
     - Me gustaría seleccionar [la opción en segundo lugar](motivo) como mi elección
     - [la dos](motivo)
-
-
 - intent: opcion_3
   examples: |
     - Quiero elegir [la opción 3](motivo)

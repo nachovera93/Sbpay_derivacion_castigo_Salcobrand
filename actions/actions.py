@@ -38,7 +38,7 @@ class SetNameAction(Action):
 
         try:
             splits = tracker.sender_id
-            customer_id,campaign_group,caller_id = splits.split('|')
+            customer_id,campaign_group,caller_id,phone_number = splits.split('|')
             names = getNameByCustomerID(customer_id)
             print(names)
         except:
@@ -50,7 +50,8 @@ class SetNameAction(Action):
             fecha_vcto = "01-01-1979"
         print(f"deuda_mora : {deuda_mora}")
         print(f"fecha_vcto : {fecha_vcto}")
-        return [SlotSet("name", names),SlotSet("fecha_vcto", fecha_vcto), SlotSet("monto", deuda_mora)]
+        print(f"phone_number : {phone_number}")
+        return [SlotSet("name", names),SlotSet("fecha_vcto", fecha_vcto), SlotSet("monto", deuda_mora),SlotSet("phone_number", phone_number)]
 
 
 
@@ -122,6 +123,11 @@ class ActionGuardarConoce(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         conoce_o_no = tracker.get_slot("conoce_o_no")
+
+        if isinstance(conoce_o_no, list):
+            conoce_o_no = conoce_o_no[0]
+
+
         if tracker.get_slot("conoce_o_no") is None:
             print("Es None ..")
         print("conoce_o_no: ", conoce_o_no)
@@ -139,6 +145,9 @@ class ActionRecibirEsoNo(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         es_o_no = tracker.get_slot("es_o_no")
+        if isinstance(es_o_no, list):
+            es_o_no = es_o_no[0]
+
         print("es_o_no: ", es_o_no)
             #dispatcher.utter_message(text=f"Razón: {Razón}")
         return []
@@ -154,6 +163,8 @@ class ActionConoceONo(Action):
         # Obtener la intención actual
         latest_message = tracker.latest_message
         conoce_intent = latest_message['intent']['name']
+        if isinstance(conoce_intent, list):
+            conoce_intent = conoce_intent[0]
         print(f'conoce o no: {conoce_intent}')
 
 
@@ -167,11 +178,13 @@ class ActionPagaONo(Action):
         # Obtener la intención actual
         latest_message = tracker.latest_message
         paga_intent = latest_message['intent']['name']
+
+        if isinstance(paga_intent, list):
+            paga_intent = paga_intent[0]
+
         print(f'paga_intent : {paga_intent}')
 
 es_o_no_intent=None
-
-
 class ActionConoceONo(Action):
     def name(self):
         return "action_es_o_no"
@@ -181,6 +194,9 @@ class ActionConoceONo(Action):
         # Obtener la intención actual
         latest_message = tracker.latest_message
         es_o_no_intent = latest_message['intent']['name']
+    
+        if isinstance(es_o_no_intent, list):
+            es_o_no_intent = es_o_no_intent[0]
         print(f'es_o_no_intent: {es_o_no_intent}')
 
 
@@ -194,7 +210,7 @@ class ActionSiPaga(Action):
 
 
         splits = tracker.sender_id
-        customer_id,campaign_group,caller_id = splits.split('|')
+        customer_id,campaign_group,caller_id,phone_number = splits.split('|')
         print("-------------------------------------------------------------")
         print(tracker.slots)
 
@@ -220,6 +236,7 @@ class ActionSiPaga(Action):
         paga_o_no=tracker.slots["paga_o_no"]
         fecha_vcto=tracker.slots["fecha_vcto"]
         opcion_pago=tracker.slots["opcion_pago"]
+        phone_number=tracker.slots["phone_number"]
 
         print(f'name: {name}')
         print(f'es_persona_correcta {es_o_no_intent}')
@@ -229,6 +246,7 @@ class ActionSiPaga(Action):
         print(f'paga_o_no: {paga_intent}')
         print(f'opcion_pago: {current_intent}')
         print(f'conoce_intent: {conoce_intent}')
+        print(f'phone_number: {phone_number}')
         
 
 
@@ -252,6 +270,7 @@ class ActionSiPaga(Action):
                     "monto": monto,
                     "fecha_vcto": fecha_vcto,
                     "fecha_pago": fecha_pago,
+                    "phone_number": phone_number,
                     "created_at": datetime.datetime.now(),
                     "updated_at": datetime.datetime.now()
                 }},
@@ -270,6 +289,7 @@ class ActionSiPaga(Action):
         paga_o_no=None
         fecha_vcto=None
         opcion_pago=None
+        phone_number=None
 
         return []
     
