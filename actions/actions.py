@@ -234,7 +234,6 @@ class ActionSiPaga(Action):
         fecha_pago=tracker.slots["fecha_pago"]
         monto=tracker.slots["monto"]
         paga_o_no=tracker.slots["paga_o_no"]
-        fecha_vcto=tracker.slots["fecha_vcto"]
         opcion_pago=tracker.slots["opcion_pago"]
         phone_number=tracker.slots["phone_number"]
 
@@ -247,6 +246,7 @@ class ActionSiPaga(Action):
         print(f'opcion_pago: {current_intent}')
         print(f'conoce_intent: {conoce_intent}')
         print(f'phone_number: {phone_number}')
+        print(f'fecha_pago: {fecha_pago}')
         
 
 
