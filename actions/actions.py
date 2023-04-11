@@ -35,7 +35,7 @@ class SetNameAction(Action):
         return "set_name_action"
 
     def run(self, dispatcher, tracker, domain):
-
+        #tracker.update(Restarted())
         try:
             splits = tracker.sender_id
             customer_id,campaign_group,caller_id,phone_number = splits.split('|')
@@ -227,26 +227,30 @@ class ActionSiPaga(Action):
             current_intent="Reagendar"
         if(current_intent=="opcion_3"):
             current_intent="Asesoria"
-        name=tracker.slots["name"]
-        es_persona_correcta=tracker.slots["es_persona_correcta"]
-        conoce_o_no=tracker.slots["conoce_o_no"]
-        fecha_vcto=tracker.slots["fecha_vcto"]
-        fecha_pago=tracker.slots["fecha_pago"]
-        monto=tracker.slots["monto"]
-        paga_o_no=tracker.slots["paga_o_no"]
-        opcion_pago=tracker.slots["opcion_pago"]
-        phone_number=tracker.slots["phone_number"]
 
-        print(f'name: {name}')
-        print(f'es_persona_correcta {es_o_no_intent}')
-        print(f'conoce_o_no: {conoce_intent}')
-        print(f'fecha_vcto: {fecha_vcto}')
-        print(f'monto: {monto}')
-        print(f'paga_o_no: {paga_intent}')
+
+        slots_to_update = [
+            "name",
+            "es_persona_correcta",
+            "conoce_o_no",
+            "fecha_vcto",
+            "fecha_pago",
+            "monto",
+            "paga_o_no",
+            "opcion_pago",
+            "phone_number"
+        ]
+        updated_slots = {slot: tracker.slots.get(slot) or None for slot in slots_to_update}
+
+        print(f'name: {updated_slots["name"]}')
+        print(f'es_persona_correcta: {updated_slots["es_persona_correcta"]}')
+        print(f'conoce_o_no: {updated_slots["conoce_o_no"]}')
+        print(f'fecha_vcto: {updated_slots["fecha_vcto"]}')
+        print(f'monto: {updated_slots["monto"]}')
+        print(f'paga_o_no: {updated_slots["paga_o_no"]}')
         print(f'opcion_pago: {current_intent}')
-        print(f'conoce_intent: {conoce_intent}')
-        print(f'phone_number: {phone_number}')
-        print(f'fecha_pago: {fecha_pago}')
+        print(f'phone_number: {updated_slots["phone_number"]}')
+        print(f'fecha_pago: {updated_slots["fecha_pago"]}')
         
 
 
@@ -254,32 +258,34 @@ class ActionSiPaga(Action):
 
         bulk_updates=[]
         update = pymongo.UpdateOne(
-            {
-                "customer_id": str(customer_id),
-                "organization_id": int(organization_id),
-                "group_campaign_id": int(campaign_group),
-                "caller_id": str(caller_id)
-            },
-            {
-                "$set": {
-                    "es_persona_correcta": es_o_no_intent,
-                    "conoce_o_no": conoce_intent,
-                    "opcion_pago": current_intent,
-                    "paga_o_no": paga_intent,
-                    "name": name,
-                    "monto": monto,
-                    "fecha_vcto": fecha_vcto,
-                    "fecha_pago": fecha_pago,
-                    "phone_number": phone_number,
-                    "created_at": datetime.datetime.now(),
-                    "updated_at": datetime.datetime.now()
-                }},
-                upsert=True
-            )
+        {
+            "customer_id": str(customer_id),
+            "organization_id": int(organization_id),
+            "group_campaign_id": int(campaign_group),
+            "caller_id": str(caller_id)
+        },
+        {
+            "$set": {
+                "es_persona_correcta": updated_slots["es_persona_correcta"],
+                "conoce_o_no": updated_slots["conoce_o_no"],
+                "opcion_pago": current_intent,
+                "paga_o_no": updated_slots["paga_o_no"],
+                "name": updated_slots["name"],
+                "monto": updated_slots["monto"],
+                "fecha_vcto": updated_slots["fecha_vcto"],
+                "fecha_pago": updated_slots["fecha_pago"],
+                "phone_number": updated_slots["phone_number"],
+                "created_at": datetime.datetime.now(),
+                "updated_at": datetime.datetime.now()
+            }
+        },
+        upsert=True
+        )
         bulk_updates.append(update)
+        print(f'bulk_updates: {bulk_updates}')
         result = mycol.bulk_write(bulk_updates)
-        #print(f'{result.modified_count} Updateds')
-        
+        print(f'result: {result}')
+        # print(f'{result.modified_count} Updateds')
         name=None
         es_persona_correcta=None
         conoce_o_no=None
