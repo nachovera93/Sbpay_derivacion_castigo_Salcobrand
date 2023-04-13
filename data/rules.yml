@@ -100,6 +100,12 @@ rules:
       - intent: me_repite
       - action: utter_ask_question
 
+  - rule: me repite 10
+    steps:
+      - action: utter_ask_question_2
+      - intent: me_repite
+      - action: utter_ask_question_2
+
   - rule: me repite 11
     steps:
       - action: utter_si_paga
@@ -136,6 +142,12 @@ rules:
       - action: utter_no_paga
       - intent: me_repite
       - action: utter_no_paga
+
+  - rule: me repite 14
+    steps:
+      - action: utter_monto
+      - intent: me_repite
+      - action: utter_monto
   
   - rule: me repite 15
     steps:
@@ -143,6 +155,11 @@ rules:
       - intent: me_repite
       - action: utter_donde
 
+  - rule: me repite 15
+    steps:
+      - action: utter_cuando
+      - intent: me_repite
+      - action: utter_cuando
 
   - rule: donde 1
     steps:

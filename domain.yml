@@ -148,6 +148,7 @@ actions:
 - utter_si_conoce
 - utter_si_paga
 - utter_tranfiere
+
 forms:
   persona_form:
     required_slots:

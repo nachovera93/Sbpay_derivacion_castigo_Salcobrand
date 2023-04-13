@@ -48,6 +48,12 @@ class SetNameAction(Action):
         except:
             deuda_mora = "10000"
             fecha_vcto = "01-01-1979"
+        try:
+            valueContesta = "si"
+            value_to_set = "si"
+            update_key_for_customer(customer_id, campaign_group, caller_id,valueContesta, value_to_set)
+        except:
+            print("no actualiza estado de corte")
         print(f"deuda_mora : {deuda_mora}")
         print(f"fecha_vcto : {fecha_vcto}")
         print(f"phone_number : {phone_number}")
@@ -70,8 +76,32 @@ def getDebtsByCustomerID(customer_id, campaign_group):
     mycol = mydb["debts"]
 
     x = mycol.find_one({  'organization_id': int(organization_id), 'customer_id': str(customer_id), 'group_campaign_id': int(campaign_group)  }, sort=[('updated_at', -1)])
-
+ 
     return x["deuda_total"], x["fecha_vcto"]
+
+def update_key_for_customer(customer_id, campaign_group, caller_id, valueContesta,valueCorta):
+    mydb = myclient["haddacloud-v2"]
+    mycol = mydb["voicebot-interactions"]
+
+    result = mycol.update_one(
+        {
+            "customer_id": str(customer_id),
+            "organization_id": int(organization_id),
+            "group_campaign_id": int(campaign_group),
+            "caller_id": str(caller_id)
+        },
+        {
+            "$set": {
+                "contesta":valueContesta,
+                "corta": valueCorta,
+                "updated_at": datetime.datetime.now()
+            }
+        }
+    )
+
+    print(f"Documentos modificados: {result.modified_count}")
+
+# Luego puedes llamar a la función de esta manera
 
 
 def month_converter(i):
@@ -266,6 +296,8 @@ class ActionSiPaga(Action):
         },
         {
             "$set": {
+                "contesta":"si",
+                "corta": "no",
                 "es_persona_correcta": updated_slots["es_persona_correcta"],
                 "conoce_o_no": updated_slots["conoce_o_no"],
                 "opcion_pago": current_intent,
@@ -300,7 +332,11 @@ class ActionSiPaga(Action):
         return []
     
 
-
+class ActionSlotReset(Action):  
+    def name(self):         
+        return 'action_slot_reset'  
+    def run(self, dispatcher, tracker, domain):
+        return[AllSlotsReset()]
 
 
 

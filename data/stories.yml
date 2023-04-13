@@ -5,6 +5,7 @@ stories:
   - story: interactive_story_1
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - action: utter_greet
     - intent: negación
@@ -39,6 +40,7 @@ stories:
   - story: interactive_story_2
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -75,6 +77,7 @@ stories:
   - story: interactive_story_3
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -125,6 +128,7 @@ stories:
   - story: interactive_story_4
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -175,6 +179,7 @@ stories:
   - story: interactive_story_5
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -226,6 +231,7 @@ stories:
   - story: interactive_story_5
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -275,6 +281,7 @@ stories:
   - story: interactive_story_5
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -324,6 +331,7 @@ stories:
   - story: interactive_story_opcion_3
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -373,6 +381,7 @@ stories:
   - story: interactive_story_6
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -412,6 +421,7 @@ stories:
   - story: interactive_story_7
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -445,6 +455,7 @@ stories:
   - story: interactive_story_8
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -487,6 +498,7 @@ stories:
   - story: interactive_story_9
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -528,6 +540,7 @@ stories:
   - story: interactive_story_1
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -570,6 +583,7 @@ stories:
   - story: interactive_story_1
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -612,6 +626,7 @@ stories:
   - story: interactive_unlike_intent
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -655,6 +670,7 @@ stories:
   - story: interactive_unlike_intent
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -698,6 +714,7 @@ stories:
   - story: interactive_unlike_intent_2
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -741,6 +758,7 @@ stories:
   - story: interactive_unlike_intent_3
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -784,6 +802,7 @@ stories:
   - story: interactive_story_1_unlike_2
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -829,6 +848,7 @@ stories:
   - story: interactive_story_1
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -843,6 +863,7 @@ stories:
   - story: interactive_story_2
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
@@ -870,6 +891,7 @@ stories:
   - story: interactive_story_3
     steps:
     - intent: saludos
+    - action: action_slot_reset
     - action: set_name_action
     - slot_was_set:
       - name: Jose Miguel
