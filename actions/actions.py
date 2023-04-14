@@ -51,9 +51,10 @@ class SetNameAction(Action):
         try:
             valueContesta = "si"
             value_to_set = "si"
-            update_key_for_customer(customer_id, campaign_group, caller_id,valueContesta, value_to_set)
-        except:
-            print("no actualiza estado de corte")
+            update_key_for_customer(customer_id, campaign_group, caller_id, valueContesta, value_to_set, names, phone_number, deuda_mora)
+        except Exception as e:
+            print("No se pudo actualizar el estado de corte")
+            print(f"Error: {e}")
         print(f"deuda_mora : {deuda_mora}")
         print(f"fecha_vcto : {fecha_vcto}")
         print(f"phone_number : {phone_number}")
@@ -79,7 +80,7 @@ def getDebtsByCustomerID(customer_id, campaign_group):
  
     return x["deuda_total"], x["fecha_vcto"]
 
-def update_key_for_customer(customer_id, campaign_group, caller_id, valueContesta,valueCorta):
+def update_key_for_customer(customer_id, campaign_group, caller_id, valueContesta, value_to_set, names, phone_number, deuda_mora):
     mydb = myclient["haddacloud-v2"]
     mycol = mydb["voicebot-interactions"]
 
@@ -92,11 +93,22 @@ def update_key_for_customer(customer_id, campaign_group, caller_id, valueContest
         },
         {
             "$set": {
-                "contesta":valueContesta,
-                "corta": valueCorta,
+                "contesta": valueContesta,
+                "corta": value_to_set,
+                "es_persona_correcta": None,
+                "conoce_o_no": None,
+                "opcion_pago": None,
+                "paga_o_no": None,
+                "name": names,
+                "monto": deuda_mora,
+                "fecha_vcto": None,
+                "fecha_pago": None,
+                "phone_number": phone_number,
+                "created_at": datetime.datetime.now(),
                 "updated_at": datetime.datetime.now()
             }
-        }
+        },
+        upsert=True
     )
 
     print(f"Documentos modificados: {result.modified_count}")
@@ -253,11 +265,12 @@ class ActionSiPaga(Action):
         print(f'current_intent: {type(current_intent)}')
         if(current_intent=="opcion_1"):
             current_intent="Renegociar"
-        if(current_intent=="opcion_2"):
+        elif(current_intent=="opcion_2"):
             current_intent="Reagendar"
-        if(current_intent=="opcion_3"):
+        elif(current_intent=="opcion_3"):
             current_intent="Asesoria"
-
+        else:
+           current_intent = None
 
         slots_to_update = [
             "name",
@@ -286,8 +299,7 @@ class ActionSiPaga(Action):
 
         print("-------------------------------------------------------------")
 
-        bulk_updates=[]
-        update = pymongo.UpdateOne(
+        result = mycol.update_one(
         {
             "customer_id": str(customer_id),
             "organization_id": int(organization_id),
@@ -313,9 +325,7 @@ class ActionSiPaga(Action):
         },
         upsert=True
         )
-        bulk_updates.append(update)
-        print(f'bulk_updates: {bulk_updates}')
-        result = mycol.bulk_write(bulk_updates)
+       
         print(f'result: {result}')
         # print(f'{result.modified_count} Updateds')
         name=None
