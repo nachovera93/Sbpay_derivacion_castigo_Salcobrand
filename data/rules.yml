@@ -8,10 +8,7 @@ rules:
       - action: utter_despedida
       - action: action_restart2
   
-  #- rule: fallback2
-  #  steps:
-  #    - intent: nlu_fallback
-  #    - action: utter_default_repetir
+
 
   - rule: Repetir la última pregunta cuando no se entiende la respuesta
     condition:
@@ -21,10 +18,6 @@ rules:
     - action: action_repeat_last_question
     - intent: ANY  # Agrega esta línea
     - action: action_listen  # Agrega esta línea
-
-
-
-
 
 
   - rule: eres bot1?
@@ -75,24 +68,6 @@ rules:
       - intent: me_repite
       - action: utter_greet_apolo
 
-  - rule: me repite 3
-    steps:
-      - action: utter_preguntar_conoce
-      - intent: me_repite
-      - action: utter_preguntar_conoce
-
-  - rule: me repite 6
-    steps:
-      - action: utter_si_conoce
-      - intent: me_repite
-      - action: utter_si_conoce
-
-  - rule: me repite 7
-    steps:
-      - action: utter_no_conoce
-      - intent: me_repite
-      - action: utter_no_conoce
-
 
   - rule: me repite 10
     steps:
@@ -105,12 +80,6 @@ rules:
       - action: utter_ask_question_2
       - intent: me_repite
       - action: utter_ask_question_2
-
-  - rule: me repite 11
-    steps:
-      - action: utter_si_paga
-      - intent: me_repite
-      - action: utter_si_paga
 
   #- rule: me repite 12
   #  steps:
@@ -161,12 +130,6 @@ rules:
       - intent: me_repite
       - action: utter_cuando
 
-  - rule: donde 1
-    steps:
-      - action: utter_preguntar_conoce
-      - intent: de_donde
-      - action: utter_donde
-      - action: utter_preguntar_conoce
 
   - rule: deonde 2
     steps:

@@ -3,62 +3,29 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
+- saludos
+- afirmación
 - ANY
 - negación
-- saludos
 - nlu_fallback
 - eres_humano
-- afirmación
 - preguntar_monto_deuda
 - de_donde
-- Asesoria
 - out_of_scope
-- Renegociar
 - que_fecha
 - preguntar_nombre
-- no_tengo_plata_intent
-- porque_no_puedo_intent
-- estoy_cesante_intent
-- ya_pagué_intent
-- no_tengo_auto_intent
-- estoy_enfermo_intent
 - despedida
-- no_use_autopista_intent
-- vendí_el_auto_intent
-- no_quiero_pagar_intent
 - preguntar_monto
 - me_repite
-- space
-- start
-- inicio
-- que_hora_es
-- no_me_interesa
-- Reagendar
 - cuando
-- opcion_1
-- opcion_2
-- opcion_3
 entities:
-- motivo
 - nombre_persona
 - respuesta
 slots:
-  phone_number:
-    type: text
-    influence_conversation: true
   name:
     type: text
     influence_conversation: true
   es_persona_correcta:
-    type: text
-    influence_conversation: true
-  conoce_o_no:
-    type: text
-    influence_conversation: true
-  fecha_vcto:
-    type: text
-    influence_conversation: true
-  fecha_pago:
     type: text
     influence_conversation: true
   monto:
@@ -67,12 +34,18 @@ slots:
   paga_o_no:
     type: text
     influence_conversation: true
-  opcion_pago:
-    type: text
-    influence_conversation: false
   predicted_intent:
     type: text
     influence_conversation: false
+  phone_number:
+    type: text
+    influence_conversation: false
+  fecha_vcto:
+    type: text
+    influence_conversation: false
+  derivado_o_no:
+    type: text
+    influence_conversation: true
 responses:
   utter_out_of_scope:
   - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
@@ -80,16 +53,10 @@ responses:
   - text: Hola!, me comunico con {name}?.
   utter_greet_apolo:
   - text: Disculpe, me comunico con {name}?.
-  utter_preguntar_conoce:
-  - text: ¿Usted conoce a {name}?
-  utter_si_conoce:
-  - text: Podría comentarle que tenemos información importante y que nos puede encontrar en a b c servicios financieros .cl o llamando al 223805046| EXIT​
-  utter_no_conoce:
-  - text: Disculpe la molestia, que tenga buen día. | EXIT
   utter_ask_question:
-  - text: '{name}, estamos llamando de Autopista Central por una boleta pendiente de {monto} pesos vencida el {fecha_vcto}.​ ¿Puede realizar el pago dentro de los 3 próximos días?​'
+  - text: '{name}, estamos llamando de S b Pey por su Tarjeta Salco Preunic Visa S b Pay, para informarle que tiene a su disposición distintas alternativas y descuentos para el pago de su deuda. ​¿Desea que lo atienda un ejecutivo para que pueda explicarle todas sus opciones y beneficios?​​'
   utter_ask_question_2:
-  - text: '{name}, ¿Puede realizar el pago dentro de los 3 próximos días?​'
+  - text: '{name}, ​¿Desea que lo atienda un ejecutivo para que pueda explicarle todas sus opciones y beneficios?​'
   utter_si_paga:
   - text: Muchas gracias por su tiempo {name}. Su pago ha quedado agendado para el {fecha_pago}, que tenga un buen dia. | EXIT
   utter_default:
@@ -101,15 +68,15 @@ responses:
   utter_despedida:
   - text: Muchas gracias por su tiempo, adiós | EXIT
   utter_bot:
-  - text: Estamos llamando desde Autopista Central y Soy un asistente virtual.
+  - text: Estamos llamando de S b Pey por su Tarjeta Salco Preunic Visa S b Pay y Soy un asistente virtual.
   utter_monto:
   - text: El monto es de {monto} pesos vencida el {fecha_vcto}
   utter_donde:
-  - text: Estamos llamando desde Autopista Central.
+  - text: Estamos llamando de S b Pey por su Tarjeta Salco Preunic Visa S b Pay.
   utter_donde2:
-  - text: Estamos llamando desde Autopista Central ¿Puede realizar el pago dentro de los 3 próximos días?.
+  - text: Estamos llamando dde S b Pey por su Tarjeta Salco Preunic Visa S b Pay ​¿Desea que lo atienda un ejecutivo para que pueda explicarle todas sus opciones y beneficios?.
   utter_no_paga:
-  - text: Para poder ayudarlo a solucionar esta situación elija alguna de las siguientes opciones, Opción 1 ¿desea renegociar la deuda? Opción 2 ¿desea pagar en otra fecha? Opción 3 ¿desea ayuda de un asesor?
+  - text: Muchas gracias , si cambia de opinión nos puede contactar al número 22 38 0 5 0 38  o nuestro whastapp + 56 9 32 47 78 0 80 | EXIT
   utter_tranfiere:
   - text: ok, será transferido con uno de nuestros ejecutivos | DER
   utter_cuando:
@@ -148,25 +115,14 @@ actions:
 - utter_si_conoce
 - utter_si_paga
 - utter_tranfiere
-
 forms:
   persona_form:
     required_slots:
       es_persona_correcta:
       - entity: respuesta
         type: from_entity
-  lo_conoce_form:
-    required_slots:
-      conoce_o_no:
-      - entity: respuesta
-        type: from_entity
   paga_form:
     required_slots:
       paga_o_no:
       - entity: respuesta
-        type: from_entity
-  no_paga_form:
-    required_slots:
-      opcion_pago:
-      - entity: motivo
         type: from_entity
