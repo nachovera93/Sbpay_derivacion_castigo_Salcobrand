@@ -1,0 +1,23 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"activar_formulario\"}}]": "custom_form",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"activar_formulario\"}}, {\"active_loop\": {\"name\": \"custom_form\"}, \"prev_action\": {\"action_name\": \"custom_form\"}, \"user\": {\"intent\": \"activar_formulario\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [
+      "custom_form"
+    ],
+    "rules_for_loop_unhappy_path": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}}, {\"active_loop\": {\"name\": \"custom_form\"}, \"prev_action\": {\"action_name\": \"custom_form\"}, \"user\": {\"intent\": \"activar_formulario\"}}]": "do_not_predict_loop_action"
+    },
+    "rules_not_in_stories": [
+      "handling active loops and forms - custom_form",
+      "predicting default action with intent restart",
+      "handling active loops and forms - custom_form - action_listen",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"activar_formulario\"}}]",
+      "predicting default action with intent back"
+    ]
+  }
+}
