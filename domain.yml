@@ -46,6 +46,7 @@ slots:
   derivado_o_no:
     type: text
     influence_conversation: true
+    
 responses:
   utter_out_of_scope:
   - text: Lo siento, no entendí lo que dijiste. ¿Podrías intentarlo de nuevo?
