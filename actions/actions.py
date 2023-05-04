@@ -28,7 +28,7 @@ CONNECTION_STRING = "mongodb://172.16.1.41:27017,172.16.1.42:27017,172.16.1.43:2
 # CONNECTION_STRING = "mongodb://Admin:T3c4dmin1.@172.16.1.228:27017/data_warehouse?authSource=admin&readPreference=secondaryPreferred"
 myclient = pymongo.MongoClient(CONNECTION_STRING)
 
-organization_id=11
+organization_id=14
 
 class SetNameAction(Action):
     def name(self):
@@ -39,9 +39,11 @@ class SetNameAction(Action):
         try:
             splits = tracker.sender_id
             customer_id,campaign_group,caller_id,phone_number = splits.split('|')
-            names = getNameByCustomerID(customer_id)
-            print(names)
-        except:
+            names = getNameByCustomerID(customer_id,organization_id)
+            print(f'organization_id: {organization_id}')
+            print(f'customer_id: {customer_id}')
+        except Exception as e:
+            print(f'Error al obtener los nombres: {e}')
             names = "Jose Miguel"
         try: 
             deuda_mora, fecha_vcto = getDebtsByCustomerID(customer_id, campaign_group)
@@ -62,7 +64,7 @@ class SetNameAction(Action):
 
 
 
-def getNameByCustomerID(customer_id):
+def getNameByCustomerID(customer_id,organization_id):
 
     mydb = myclient["haddacloud-v2"]
     mycol = mydb["deudors"]
