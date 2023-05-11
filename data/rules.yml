@@ -62,6 +62,13 @@ rules:
       - intent: me_repite
       - action: utter_greet
 
+  - rule: me repite 1
+    steps:
+      - action: utter_out_of_scope
+      - intent: me_repite
+      - action: utter_out_of_scope
+
+
   - rule: me repite 2
     steps:
       - action: utter_greet_apolo
@@ -81,17 +88,6 @@ rules:
       - intent: me_repite
       - action: utter_ask_question_2
 
-  #- rule: me repite 12
-  #  steps:
-  #    - action: utter_default
-  #    - intent: me_repite
-  #    - action: utter_default
-#
-  #- rule: me repite 13
-  #  steps:
-  #    - action: utter_default_repetir
-  #    - intent: me_repite
-  #    - action: utter_default_repetir
 
   - rule: me repite 13
     steps:
@@ -123,6 +119,24 @@ rules:
       - action: utter_donde
       - intent: me_repite
       - action: utter_donde
+
+  - rule: me repite 15
+    steps:
+      - action: utter_donde2
+      - intent: me_repite
+      - action: utter_donde2
+
+  - rule: me repite 15
+    steps:
+      - action: utter_default_repetir
+      - intent: me_repite
+      - action: utter_default_repetir
+
+  - rule: me repite 15
+    steps:
+      - action: utter_default
+      - intent: me_repite
+      - action: utter_default
 
   - rule: me repite 15
     steps:
