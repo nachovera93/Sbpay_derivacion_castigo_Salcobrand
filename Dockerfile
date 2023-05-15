@@ -1,8 +1,8 @@
-FROM rasa/rasa:2.8.12
+FROM rasa/rasa:2.8.0
 WORKDIR  '/app'
 COPY . /app
 USER root
-
+RUN pip install scipy==1.8.0
 COPY ./data /app/data
 #RUN  rasa train
 VOLUME /app

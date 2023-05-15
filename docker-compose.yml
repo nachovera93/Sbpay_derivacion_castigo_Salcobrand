@@ -7,8 +7,9 @@ services:
         context:  .
       volumes:
       - "./:/app"
+      - "./models:/app/models"
       ports: 
-        - "5007:5005"
+        - "5006:5005"
     action_server:
       container_name: "action_server_igs2"
       build: 
@@ -17,4 +18,4 @@ services:
         - ./actions:/app/actions
         - ./data:/app/data
       ports:
-        - 5057:5055
+        - 5056:5055
