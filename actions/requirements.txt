@@ -1,5 +1,5 @@
-mysql-connector
-pymysql
+
+pymongo
 requests
 
 

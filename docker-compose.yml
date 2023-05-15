@@ -1,7 +1,7 @@
 version: '3'
 services:
     rasa:
-      container_name: "rasa_server_igs2"
+      container_name: "rasa_server_castigo_salcobrand"
       user: root
       build: 
         context:  .
@@ -11,7 +11,7 @@ services:
       ports: 
         - "5006:5005"
     action_server:
-      container_name: "action_server_igs2"
+      container_name: "action_server_castigo_salcobrand"
       build: 
         context: actions
       volumes:
