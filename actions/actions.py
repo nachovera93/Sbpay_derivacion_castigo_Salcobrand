@@ -14,14 +14,7 @@ global compromiso_p
 global derivacion
 global fecha_com
 global entrega_info
-SiPaga=None
-NoPaga=None
-motivo=None
-tipo_contacto=0
-compromiso_p=0
-derivacion=None
-fecha_com=None
-entrega_info=None
+
 
 
 CONNECTION_STRING = "mongodb://172.16.1.41:27017,172.16.1.42:27017,172.16.1.43:27017/?replicaSet=haddacloud-rs&readPreference=secondaryPreferred"
@@ -95,15 +88,15 @@ def update_key_for_customer(customer_id, campaign_group, caller_id, valueContest
         },
         {
             "$set": {
-                "flujo": "Sbpay_derivacion_castigo_salcobrand",
-                "contesta": valueContesta,
-                "corta": value_to_set,
+                "flujo": "sbpay_derivacion_castigo_salcobrand",
+                "contesta": valueContesta.lower(),
+                "corta": value_to_set.lower(),
                 "derivado_o_no":None,
                 "es_persona_correcta": None,
                 "conoce_o_no": None,
                 "opcion_pago": None,
                 "paga_o_no": None,
-                "name": names,
+                "name": names.lower(),
                 "monto": None,
                 "fecha_vcto": None,
                 "fecha_pago": None,
@@ -311,15 +304,15 @@ class ActionSiPaga(Action):
         },
         {
             "$set": {
-                "flujo": "Sbpay_derivacion_castigo_salcobrand",
-                "contesta":"Si",
-                "corta": "No",
-                "derivado_o_no": current_intent,
-                "es_persona_correcta": updated_slots["es_persona_correcta"],
-                "conoce_o_no": updated_slots["conoce_o_no"],
+                "flujo": "sbpay_derivacion_castigo_salcobrand",
+                "contesta":"si",
+                "corta": "no",
+                "derivado_o_no": current_intent.lower(),
+                "es_persona_correcta": updated_slots["es_persona_correcta"].lower(),
+                "conoce_o_no": updated_slots["conoce_o_no"].lower(),
                 "opcion_pago": None,
                 "paga_o_no": None,
-                "name": updated_slots["name"],
+                "name": updated_slots["name"].lower(),
                 "monto": None,
                 "fecha_vcto": None,
                 "fecha_pago": None,
