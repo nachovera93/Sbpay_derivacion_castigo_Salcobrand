@@ -89,8 +89,8 @@ def update_key_for_customer(customer_id, campaign_group, caller_id, valueContest
         {
             "$set": {
                 "flujo": "sbpay_derivacion_castigo_salcobrand",
-                "contesta": valueContesta.lower(),
-                "corta": value_to_set.lower(),
+                "contesta": valueContesta,
+                "corta": value_to_set,
                 "derivado_o_no":None,
                 "es_persona_correcta": None,
                 "conoce_o_no": None,
